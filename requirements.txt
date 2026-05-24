@@ -1,0 +1,4 @@
+langchain_google_genai==4.2.3
+langgraph==1.2.1
+python-dotenv==1.2.2
+tavily_python==0.7.24
