@@ -6,14 +6,19 @@ class SearchResult(TypedDict):
     content: str
     url: str
 
+class ExtractedContent(TypedDict):
+    url: str
+    raw_content: str
 
 class ResearchState(TypedDict):
 
     query: str
 
-    rewrite_query: str
+    rewritten_query: str
 
     search_results: List[SearchResult]
+
+    extracted_contents: List[ExtractedContent]
 
     formatted_context: str
 

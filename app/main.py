@@ -1,9 +1,11 @@
+from rich import print
+
 from app.graph.builder import research_graph
 
 
 def main():
 
-    print("\n=== Research Assistant Agent ===")
+    print("\n[bold green]=== Research Assistant ===[/bold green]")
 
     while True:
 
@@ -25,7 +27,7 @@ def main():
 
         except Exception as error:
 
-            print(f"\nError: {error}")
+            print(f"\n[red]ERROR:[/red] {error}")
 
 
 if __name__ == "__main__":
