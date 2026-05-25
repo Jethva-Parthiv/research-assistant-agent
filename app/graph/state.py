@@ -1,7 +1,20 @@
-from typing import TypedDict
+from typing import TypedDict, List
+
+
+class SearchResult(TypedDict):
+    title: str
+    content: str
+    url: str
+
 
 class ResearchState(TypedDict):
-    query : str
-    search_results : list[dict]
-    final_answer : str
-    
+
+    query: str
+
+    rewrite_query: str
+
+    search_results: List[SearchResult]
+
+    formatted_context: str
+
+    final_answer: str
