@@ -3,6 +3,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from app.core.settings import CHAT_MODEL_NAME
 from app.prompts.research_prompt import RESEARCH_PROMPT
 from langchain_core.output_parsers import StrOutputParser
+from app.tools.web_search import web_search
 
 load_dotenv()
 
@@ -26,3 +27,21 @@ def generate_answer(query: str, context : str):
     response = chain.invoke(prompt)
 
     return response
+
+def research_task(task: str):
+
+    results = web_search(task)
+
+    evidence = []
+
+    for result in results:
+
+        evidence.append(
+            {
+                "task": task,
+                "source": result["url"],
+                "content": result["content"]
+            }
+        )
+
+    return evidence

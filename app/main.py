@@ -1,6 +1,7 @@
 from rich import print
 
-from app.graph.builder import research_graph
+# from app.graph.workflows.simple_research import research_graph
+from app.graph.workflows.deep_research import research_graph
 
 
 def main():
@@ -23,6 +24,7 @@ def main():
             )
 
             print("\n")
+            
             print(response["final_answer"])
 
         except Exception as error:
