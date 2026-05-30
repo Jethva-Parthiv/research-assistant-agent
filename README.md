@@ -4,24 +4,16 @@ AI-powered Research Assistant Agent built using:
 
 - LangGraph
 - LangChain
-- Gemini
+- Google Gemini (via `langchain-google-genai`)
 - Tavily Search API
 
-RAGSearch_AI is an agentic AI system capable of:
+This project implements an **agentic research workflow** that:
 
-- web search
-- reasoning over retrieved information
-- grounded response generation
-- citation generation
-- workflow-based AI orchestration
-
-The project is designed as a scalable foundation for future:
-
-- Retrieval-Augmented Generation (RAG)
-- multi-agent systems
-- conversational memory
-- document ingestion
-- enterprise AI workflows
+- rewrites the user query for better web search
+- plans multiple research tasks
+- searches the web and gathers evidence per task
+- synthesizes a final grounded answer
+- returns the final response as structured markdown (per prompt)
 
 ---
 
@@ -30,12 +22,12 @@ The project is designed as a scalable foundation for future:
 ## Current Features
 
 - AI-powered research assistant
-- Web search integration using Tavily
-- LangGraph workflow orchestration
-- Gemini-powered reasoning
-- Citation-grounded responses
-- Modular architecture
-- Production-style project structure
+- Query rewriting for search optimization
+- Task planning for multi-step research
+- Web search + webpage extraction via Tavily
+- Evidence-based answer synthesis
+- Deep (workflow-based) orchestration with LangGraph
+- Modular architecture (nodes/services/agents)
 
 ---
 
@@ -43,14 +35,16 @@ The project is designed as a scalable foundation for future:
 
 ```text
 User Query
-    ↓
-Web Search Tool
-    ↓
-Retrieved Results
-    ↓
-LLM Reasoning
-    ↓
-Grounded Answer + Citations
+  ↓
+query_rewrite_node (rewrite for search)
+  ↓
+planner_node (create research tasks)
+  ↓
+evidence_node (search + gather evidence)
+  ↓
+synthesis_context (synthesize final answer)
+  ↓
+END
 ```
 
 ---
@@ -68,22 +62,48 @@ Grounded Answer + Citations
 # Folder Structure
 
 ```text
-RAGSearch_AI/
+Research_Assisatant_Agent/
 │
 ├── app/
 │   ├── agents/
-│   │   └── researcher.py
+│   │   ├── planner.py
+│   │   ├── researcher.py
+│   │   └── synthesizer.py
 │   │
 │   ├── graph/
+│   │   ├── state.py
 │   │   ├── builder.py
-│   │   └── state.py
+│   │   └── workflows/
+│   │       ├── deep_research.py
+│   │       └── simple_research.py
+│   │
+│   ├── graph/nodes/
+│   │   ├── query_rewrite_node.py
+│   │   ├── planner_node.py
+│   │   ├── evidence_node.py
+│   │   ├── synthesis_context.py
+│   │   ├── search_node.py
+│   │   ├── extract_node.py
+│   │   ├── formatter_node.py
+│   │   └── answer_node.py
 │   │
 │   ├── tools/
 │   │   └── web_search.py
 │   │
-│   ├── prompts/
+│   ├── services/
+│   │   ├── query_rewriter.py
+│   │   ├── formatter.py
+│   │   └── citation.py
 │   │
-│   └── main.py
+│   ├── prompts/
+│   │   └── research_prompt.py
+│   │
+│   ├── core/
+│   │   └── settings.py
+│   │
+│   └── memory/
+│       └── postgres_memory.py
+
 │
 ├── .env
 ├── requirements.txt
@@ -97,8 +117,7 @@ RAGSearch_AI/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/RAGSearch_AI.git
-cd RAGSearch_AI
+git clone https://github.com/Jethva-Parthiv/research-assistant-agent.git
 ```
 
 ---
@@ -125,16 +144,6 @@ source venv/bin/activate
 
 ```bash
 pip install -r requirements.txt
-```
-
-Or manually:
-
-```bash
-pip install langgraph
-pip install langchain
-pip install langchain-google-genai
-pip install tavily-python
-pip install python-dotenv
 ```
 
 ---
@@ -166,15 +175,21 @@ What is Retrieval-Augmented Generation?
 
 ---
 
-# Current Workflow
+# Current Workflow (deep_research)
 
 ```text
-search_node
-    ↓
-answer_node
-    ↓
-END
+query_rewrite_node → planner_node → evidence_node → synthesis_context → END
 ```
+
+# Alternate Workflow (simple_research)
+
+The repository also contains a simpler end-to-end pipeline that runs in this order:
+
+
+```text
+query_rewrite_node → search_node → extract_node → formatter_node → answer_node → END
+```
+
 
 ---
 
@@ -182,17 +197,14 @@ END
 
 Planned features:
 
-- RAG pipelines
 - PDF/document ingestion
-- vector databases
-- conversational memory
-- multi-agent workflows
-- async processing
-- query rewriting
-- reranking
-- streaming responses
+- Vector databases / persistent RAG storage
+- Conversational memory
+- Multi-agent collaboration patterns
+- Async + streaming responses
+- Reranking and retrieval evaluation
 - FastAPI backend
-- web UI
+- Web UI
 
 ---
 
@@ -202,15 +214,15 @@ This project focuses on understanding:
 
 - Agentic AI
 - LangGraph workflows
-- Retrieval-Augmented Generation
-- grounded generation
+- Retrieval-Augmented Generation (RAG)
+- grounded synthesis with evidence
 - AI orchestration
-- tool calling
-- citation generation
-- scalable AI architecture
+- tool calling (web search + extraction)
+- scalable agent architecture
 
 ---
 
 # Author
 
 Built for learning and research in modern AI engineering and agentic systems.
+
