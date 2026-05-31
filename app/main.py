@@ -1,34 +1,104 @@
-from rich import print
+from rich.console import Console
+from rich.panel import Panel
+from rich.markdown import Markdown
+from rich.prompt import Prompt
+from rich.rule import Rule
+from rich.status import Status
+
 from app.services.document_saver import save_document
-# from app.graph.workflows.simple_research import research_graph
 from app.graph.workflows.deep_research import research_graph
+
+
+console = Console()
+
+
+def show_banner():
+    console.print(
+        Panel.fit(
+            "[bold cyan]Research Assistant[/bold cyan]\n"
+            "[green]Powered by LangGraph + Gemini[/green]",
+            border_style="blue",
+        )
+    )
+
+
+def process_query(query: str):
+
+    with console.status(
+        "[bold green]Researching...[/bold green]",
+        spinner="dots",
+    ):
+
+        response = research_graph.invoke(
+            {
+                "query": query
+            }
+        )
+
+    return response
+
+
+def display_answer(answer: str):
+
+    console.print()
+    console.rule("[bold blue]Research Result[/bold blue]")
+
+    md = Markdown(answer)
+
+    console.print(md)
+
+    console.rule()
 
 
 def main():
 
-    print("\n[bold green]=== Research Assistant ===[/bold green]")
+    show_banner()
 
     while True:
 
-        query = input("\nAsk Question: ")
-        if query.lower() == "exit":
+        query = Prompt.ask(
+            "\n[bold cyan]Ask Question[/bold cyan]"
+        )
+
+        if query.lower() in ["exit", "quit"]:
+
+            console.print(
+                "\n[yellow]Goodbye![/yellow]"
+            )
+
             break
 
         try:
 
-            response = research_graph.invoke(
-                {
-                    "query": query
-                }
+            response = process_query(query)
+
+            path = save_document(
+                response["final_answer"]
             )
 
-            print("\n")
-            save_document(response["final_answer"])
-            print(response["final_answer"])
+            display_answer(
+                response["final_answer"]
+            )
+
+            console.print(
+                f"\n[green]✓ Saved:[/green] {path}"
+            )
+
+        except KeyboardInterrupt:
+
+            console.print(
+                "\n[red]Interrupted by user[/red]"
+            )
 
         except Exception as error:
 
-            print(f"\n[red]ERROR:[/red] {error}")
+            console.print(
+                Panel(
+                    str(error),
+                    title="ERROR",
+                    border_style="red",
+                )
+            )
 
 
 if __name__ == "__main__":
