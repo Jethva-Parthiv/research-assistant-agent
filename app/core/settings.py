@@ -16,4 +16,6 @@ CHAT_MODEL_NAME = os.getenv(
     "gemini-2.5-flash"
 )
 
-
+MD_FILE_STORE_LOCATION = os.getenv(
+    "DOCUMENT_STORE_PATH"
+)
