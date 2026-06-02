@@ -1,4 +1,7 @@
-langchain_google_genai==4.2.3
-langgraph==1.2.1
+langchain_core==1.4.0
+langchain_google_genai==4.2.4
+langgraph==1.2.2
+pydantic==2.13.4
 python-dotenv==1.2.2
+rich==15.0.0
 tavily_python==0.7.24
