@@ -59,13 +59,18 @@ END
 
 ---
 
-# Folder Structure
+# Folder Structure (approx.)
 
 ```text
 Research_Assisatant_Agent/
 │
 ├── app/
+│   ├── core/
+│   │   ├── logging.py
+│   │   └── settings.py
+│   │
 │   ├── agents/
+│   │   ├── classifier.py
 │   │   ├── planner.py
 │   │   ├── researcher.py
 │   │   └── synthesizer.py
@@ -74,6 +79,7 @@ Research_Assisatant_Agent/
 │   │   ├── state.py
 │   │   ├── builder.py
 │   │   └── workflows/
+│   │       ├── research_router.py
 │   │       ├── deep_research.py
 │   │       └── simple_research.py
 │   │
@@ -85,26 +91,28 @@ Research_Assisatant_Agent/
 │   │   ├── search_node.py
 │   │   ├── extract_node.py
 │   │   ├── formatter_node.py
-│   │   └── answer_node.py
+│   │   ├── answer_node.py
+│   │   └── router_node.py
 │   │
-│   ├── tools/
-│   │   └── web_search.py
+│   ├── ingestion/
+│   │   ├── chunking.py
+│   │   └── ingest.py
 │   │
-│   ├── services/
-│   │   ├── query_rewriter.py
-│   │   ├── formatter.py
-│   │   └── citation.py
+│   ├── memory/
+│   │   └── postgres_memory.py
 │   │
 │   ├── prompts/
 │   │   └── research_prompt.py
 │   │
-│   ├── core/
-│   │   └── settings.py
+│   ├── services/
+│   │   ├── citation.py
+│   │   ├── formatter.py
+│   │   ├── query_rewriter.py
+│   │   └── document_saver.py
 │   │
-│   └── memory/
-│       └── postgres_memory.py
-
-│
+│   ├── tools/
+│   │   └── web_search.py
+│   │
 ├── .env
 ├── requirements.txt
 └── README.md
@@ -175,20 +183,29 @@ What is Retrieval-Augmented Generation?
 
 ---
 
-# Current Workflow (deep_research)
+# Current Workflow (router selects workflow)
+
+This repo supports **two LangGraph pipelines**. A `router` node classifies the query and then runs either:
+
+- **deep** (`deep_research`)
+- **simple** (`simple_research`)
+
+---
+
+# Deep Workflow (deep_research)
 
 ```text
 query_rewrite_node → planner_node → evidence_node → synthesis_context → END
 ```
 
-# Alternate Workflow (simple_research)
+---
 
-The repository also contains a simpler end-to-end pipeline that runs in this order:
-
+# Simple Workflow (simple_research)
 
 ```text
 query_rewrite_node → search_node → extract_node → formatter_node → answer_node → END
 ```
+
 
 
 ---
