@@ -6,7 +6,7 @@ from rich.rule import Rule
 from rich.status import Status
 
 from app.services.document_saver import save_document
-from app.graph.workflows.deep_research import research_graph
+from app.graph.workflows.research_router import research_router
 
 
 console = Console()
@@ -29,7 +29,7 @@ def process_query(query: str):
         spinner="dots",
     ):
 
-        response = research_graph.invoke(
+        response = research_router.invoke(
             {
                 "query": query
             }
@@ -60,7 +60,7 @@ def main():
             "\n[bold cyan]Ask Question[/bold cyan]"
         )
 
-        if query.lower() in ["exit", "quit"]:
+        if query.lower() in ["exit", "quit" , "bye"]:
 
             console.print(
                 "\n[yellow]Goodbye![/yellow]"

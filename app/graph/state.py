@@ -22,6 +22,8 @@ class ResearchState(TypedDict):
 
     query: str
 
+    route: str
+
     rewritten_query: str
 
     research_tasks: List[str]
@@ -31,7 +33,6 @@ class ResearchState(TypedDict):
     extracted_contents: List[ExtractedContent]
 
     evidence: List[Evidence]
-
     synthesis_context: str
 
     formatted_context: str
