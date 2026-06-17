@@ -52,9 +52,9 @@ def display_answer(answer: str):
 
 def main():
 
-    show_banner()
-
     while True:
+        
+        show_banner()
 
         query = Prompt.ask(
             "\n[bold cyan]Ask Question[/bold cyan]"
