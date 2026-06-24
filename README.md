@@ -59,7 +59,7 @@ END
 
 ---
 
-# Folder Structure (approx.)
+# Folder Structure
 
 ```text
 Research_Assisatant_Agent/
@@ -77,7 +77,6 @@ Research_Assisatant_Agent/
 │   │
 │   ├── graph/
 │   │   ├── state.py
-│   │   ├── builder.py
 │   │   └── workflows/
 │   │       ├── research_router.py
 │   │       ├── deep_research.py
@@ -94,13 +93,6 @@ Research_Assisatant_Agent/
 │   │   ├── answer_node.py
 │   │   └── router_node.py
 │   │
-│   ├── ingestion/
-│   │   ├── chunking.py
-│   │   └── ingest.py
-│   │
-│   ├── memory/
-│   │   └── postgres_memory.py
-│   │
 │   ├── prompts/
 │   │   └── research_prompt.py
 │   │
@@ -114,7 +106,9 @@ Research_Assisatant_Agent/
 │   │   └── web_search.py
 │   │
 ├── .env
-├── requirements.txt
+├── architecture.md
+├── pyproject.toml
+├── uv.lock
 └── README.md
 ```
 
@@ -132,26 +126,36 @@ git clone https://github.com/Jethva-Parthiv/research-assistant-agent.git
 
 ## Create Virtual Environment
 
-### Windows
+If using `uv` (recommended):
+
+```bash
+uv venv
+.venv\Scripts\activate      # Windows
+source .venv/bin/activate   # Linux/Mac
+```
+
+Or standard Python:
 
 ```bash
 python -m venv venv
-venv\Scripts\activate
-```
-
-### Linux/Mac
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
+venv\Scripts\activate       # Windows
+source venv/bin/activate    # Linux/Mac
 ```
 
 ---
 
 # Install Dependencies
 
+If using `uv` (recommended):
+
 ```bash
-pip install -r requirements.txt
+uv sync
+```
+
+Or standard pip:
+
+```bash
+pip install -e .
 ```
 
 ---
@@ -163,11 +167,20 @@ Create a `.env` file:
 ```env
 GOOGLE_API_KEY=your_api_key
 TAVILY_API_KEY=your_api_key
+DOCUMENT_STORE_PATH=data
 ```
 
 ---
 
 # Run Project
+
+If using `uv` (recommended):
+
+```bash
+uv run python -m app.main
+```
+
+Or standard Python:
 
 ```bash
 python -m app.main
