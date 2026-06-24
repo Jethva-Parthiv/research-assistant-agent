@@ -17,5 +17,7 @@ CHAT_MODEL_NAME = os.getenv(
 )
 
 MD_FILE_STORE_LOCATION = os.getenv(
-    "DOCUMENT_STORE_PATH"
+    "DOCUMENT_STORE_PATH",
+    "data"
 )
+
