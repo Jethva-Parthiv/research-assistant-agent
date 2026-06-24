@@ -17,9 +17,9 @@ def router_node(state):
 
 def route_decision(state):
 
-    route = state["route"]
+    route = state.get("route", "").strip().lower()
 
-    if route in ["DEEP","deep"]:
+    if route == "deep":
         return "deep"
 
     return "simple"

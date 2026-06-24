@@ -1,14 +1,7 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from app.core.settings import CHAT_MODEL_NAME
+from app.core.llm import llm
 from langchain_core.output_parsers import StrOutputParser
 
 parser = StrOutputParser()
-
-
-llm = ChatGoogleGenerativeAI(
-    model=CHAT_MODEL_NAME,
-    temperature=0
-)
 
 
 def classify_query(query: str):
