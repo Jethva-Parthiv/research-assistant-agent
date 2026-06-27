@@ -174,6 +174,10 @@ DOCUMENT_STORE_PATH=data
 
 # Run Project
 
+You can run either the **CLI Interface** or the **Streamlit Web GUI**.
+
+## 💻 Running the CLI Interface
+
 If using `uv` (recommended):
 
 ```bash
@@ -184,6 +188,20 @@ Or standard Python:
 
 ```bash
 python -m app.main
+```
+
+## 🌐 Running the Streamlit Web GUI
+
+If using `uv` (recommended):
+
+```bash
+uv run streamlit run gui.py
+```
+
+Or standard Python:
+
+```bash
+streamlit run gui.py
 ```
 
 ---

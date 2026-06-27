@@ -1,13 +1,6 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
+from app.core.llm import llm
 from pydantic import BaseModel
 from typing import List
-
-from app.core.settings import CHAT_MODEL_NAME
-
-llm = ChatGoogleGenerativeAI(
-    model=CHAT_MODEL_NAME,
-    temperature=0
-)
 
 class ResearchPlan(BaseModel):
     tasks: List[str]

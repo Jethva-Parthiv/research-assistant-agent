@@ -1,15 +1,14 @@
-import asyncio
+from concurrent.futures import ThreadPoolExecutor
 from app.graph.state import ResearchState
 from app.agents.researcher import research_task
 from app.core.logging import logger
 
-async def run_task_safely(task: str):
+def run_task_safely(task: str):
     """
-    Run research_task in a separate thread to support parallel execution.
-    Gracefully handles failure by inserting an empty Evidence object.
+    Run research_task safely with try-except to handle failures gracefully.
     """
     try:
-        results = await asyncio.to_thread(research_task, task)
+        results = research_task(task)
         # If Tavily search returned no results, insert an empty Evidence structure
         if not results:
             return [
@@ -30,13 +29,13 @@ async def run_task_safely(task: str):
             }
         ]
 
-async def gather_evidence(state: ResearchState):
+def gather_evidence(state: ResearchState):
     tasks = state.get("research_tasks", [])
     
-    # Schedule all Tavily API calls concurrently
-    jobs = [run_task_safely(task) for task in tasks]
-    grouped_results = await asyncio.gather(*jobs)
-    
+    # Run all search tasks concurrently in a thread pool
+    with ThreadPoolExecutor(max_workers=max(1, len(tasks))) as executor:
+        grouped_results = list(executor.map(run_task_safely, tasks))
+        
     evidence = []
     # Flatten the results while preserving task order
     for results in grouped_results:

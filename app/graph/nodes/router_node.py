@@ -5,6 +5,11 @@ from app.graph.workflows import simple_research
 from app.core.logging import logger
 
 def router_node(state):
+    # Allow overriding route for manual research mode selection
+    if state.get("route") in ["simple", "deep"]:
+        return {
+            "route": state["route"]
+        }
 
     route = classify_query(
         state["query"]
