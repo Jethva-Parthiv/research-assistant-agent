@@ -1,5 +1,5 @@
 from app.graph.state import ResearchState
-from app.agents.classifier import classify_query
+from app.services.classifier import classify_query
 from app.graph.workflows import deep_research
 from app.graph.workflows import simple_research
 from app.core.logging import logger
@@ -41,9 +41,6 @@ def simple_workflow_node(state):
             "query": state["query"]
         }
     )
-
-
-    
     return result
 
 
@@ -58,6 +55,5 @@ def deep_workflow_node(state):
             "query": state["query"]
         }
     )
-
-
+    
     return result

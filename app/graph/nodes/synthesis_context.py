@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from app.core.llm import llm
-from app.agents.synthesizer import synthesize_answer
+from app.services.synthesizer import synthesize_answer
 from app.graph.state import ResearchState
 from app.core.logging import logger
 

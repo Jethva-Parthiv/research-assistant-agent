@@ -3,9 +3,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 parser = StrOutputParser()
 
-
 def classify_query(query: str):
-
     prompt = f"""
     You are a routing classifier.
 
@@ -35,7 +33,5 @@ def classify_query(query: str):
     """
 
     chain = llm | parser
-
     response = chain.invoke(prompt)
-
     return response

@@ -1,5 +1,5 @@
 from app.graph.state import ResearchState
-from app.tools.web_search import extract_webpages
+from app.tools.tavily_search import tavily_extract as extract_webpages
 
 def extract_node(state: ResearchState):
 

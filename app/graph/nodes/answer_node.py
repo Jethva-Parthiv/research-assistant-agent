@@ -1,5 +1,5 @@
 from app.graph.state import ResearchState
-from app.agents.researcher import generate_answer
+from app.services.researcher import generate_answer
 
 def answer_node(state: ResearchState):
 

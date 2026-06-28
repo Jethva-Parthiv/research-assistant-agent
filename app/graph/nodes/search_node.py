@@ -1,5 +1,5 @@
 from app.graph.state import ResearchState
-from app.tools.web_search import web_search
+from app.tools.tavily_search import tavily_search as web_search
 
 def search_node(state: ResearchState):
 

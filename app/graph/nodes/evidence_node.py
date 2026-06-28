@@ -1,6 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 from app.graph.state import ResearchState
-from app.agents.researcher import research_task
+from app.services.researcher import research_task
 from app.core.logging import logger
 from streamlit.runtime.scriptrunner import get_script_run_ctx, add_script_run_ctx
 from langchain_core.runnables import RunnableConfig

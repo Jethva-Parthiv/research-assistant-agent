@@ -22,7 +22,7 @@ def get_tavily_client() -> TavilyClient:
         _client = TavilyClient(tavily_api_key)
     return _client
 
-def web_search(query: str, search_depth: str = 'basic', retries: int = 3):
+def tavily_search(query: str, search_depth: str = 'basic', retries: int = 3):
     logger.info(f"Searching: {query}")
 
     try:
@@ -48,7 +48,7 @@ def web_search(query: str, search_depth: str = 'basic', retries: int = 3):
     return []
 
 
-def extract_webpages(urls: list):
+def tavily_extract(urls: list):
     logger.info("Extracting webpage content")
 
     try:

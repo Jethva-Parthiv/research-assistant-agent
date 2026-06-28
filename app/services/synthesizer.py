@@ -7,7 +7,6 @@ def synthesize_answer(
         query: str,
         evidence: list
 ):
-
     context = "\n\n".join(
         [
             f"""
@@ -44,7 +43,5 @@ def synthesize_answer(
     """
 
     chain = llm | parser
-
     response = chain.invoke(prompt)
-
     return response
