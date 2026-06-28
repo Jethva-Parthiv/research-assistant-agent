@@ -297,6 +297,7 @@ def load_session(session: Dict):
         "answer_node": "completed" if session["mode"].lower() == "simple" else "pending",
         "evidence_node": "completed" if session["mode"].lower() == "deep" else "pending",
         "synthesis_context": "completed" if session["mode"].lower() == "deep" else "pending",
+        "gap_analysis_node": "completed" if session["mode"].lower() == "deep" else "pending",
     }
     st.session_state.timeline = [("Loaded", "Loaded historical report.")]
     st.session_state.search_results = []
@@ -333,6 +334,8 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
                 ("evidence_node", "Evidence Node", "Concurrently gather search evidence"),
                 ("synthesis_context", "Synthesis Context", "Synthesize findings into structured report")
             ]
+            if st.session_state.workflow_steps.get("gap_analysis_node") in ["running", "completed", "failed"]:
+                steps.append(("gap_analysis_node", "Gap Analysis Node", "Identify report gaps and generate new queries"))
         else:
             steps = [
                 ("router", "Route Decision", "Classify query complexity"),
@@ -350,6 +353,11 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
                 icon = "✓"
                 color = "#2e7d32"
                 icon_style = "background-color: #2e7d32; color: white;"
+            elif state == "skipped":
+                icon = "―"
+                color = "#757575"
+                icon_style = "background-color: #e0e0e0; color: #757575; border: 1px solid #bdbdbd;"
+                desc = desc + " (Skipped)"
             elif state == "running":
                 icon = ""
                 color = "#ff9800"
@@ -488,6 +496,8 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
                 self.add_event("Formatting references for answer builder...")
             elif node_name in ["answer_node", "synthesis_context"]:
                 self.add_event("Synthesizing citations and compiling final report...")
+            elif node_name == "gap_analysis_node":
+                self.add_event("Self-evaluation score < 3.5. Executing gap analysis...")
                 
             self.refresh_ui(node_name)
 
@@ -601,7 +611,7 @@ def main():
                     load_session(sess)
                     st.rerun()
             with col2:
-                if st.button("🗑️", key=f"del_{idx}"):
+                if st.button("🗑️", key=f"del_{idx}", use_container_width=True):
                     try:
                         sess["path"].unlink()
                         st.rerun()
@@ -622,16 +632,139 @@ def main():
         max_sources = st.slider("Max Sources", min_value=3, max_value=20, value=5)
         search_depth = st.selectbox("Search Depth", ["basic", "advanced"], index=0)
         temperature = st.slider("Temperature", min_value=0.0, max_value=1.0, value=0.0, step=0.1)
-        auto_save = st.checkbox("Auto-Save Reports", value=True)
+    
+    auto_save = True
         
-    st.sidebar.markdown("### ⚙️ Workflow Steps")
-    workflow_ph = st.sidebar.empty()
+    st.sidebar.markdown("### 🕒 Timeline")
+    timeline_ph = st.sidebar.empty()
     
     # ----------------------------------
     # Center Column (Main App Layout)
     # ----------------------------------
     col_center, col_right = st.columns([7, 3])
     
+    # Define Right Column Placeholders globally
+    with col_right:
+        st.markdown("### 📊 Metrics")
+        stats_ph = st.empty()
+        st.markdown("### ⚙️ Workflow Steps")
+        workflow_ph = st.empty()
+        st.markdown("### 🔗 Gathered Sources")
+        sources_ph = st.empty()
+
+    # Populate Metrics Placeholder with current state
+    elapsed = st.session_state.stats.get('time', 0.0)
+    mins, secs = divmod(int(elapsed), 60)
+    time_str = f"{mins}m {secs}s" if mins > 0 else f"{secs}s"
+    stats_html = f"""
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-family: 'Inter', sans-serif;">
+        <div class="glass-card" style="text-align: center;">
+            <div style="font-size: 11px; color: #757575;">Sources Found</div>
+            <div class="stat-metric">{st.session_state.stats.get('sources', 0)}</div>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+            <div style="font-size: 11px; color: #757575;">Citations</div>
+            <div class="stat-metric">{st.session_state.stats.get('citations', 0)}</div>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+            <div style="font-size: 11px; color: #757575;">Search Mode</div>
+            <div style="font-size: 14px; font-weight: bold; color: #ff9800; margin-top: 6px;">{st.session_state.stats.get('mode', 'Auto')}</div>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+            <div style="font-size: 11px; color: #757575;">Research Time</div>
+            <div style="font-size: 14px; font-weight: bold; color: #2e7d32; margin-top: 6px;">{time_str}</div>
+        </div>
+    </div>
+    """
+    stats_ph.html(stats_html)
+
+    # Populate Workflow Steps Placeholder with current state
+    steps = []
+    if st.session_state.route_decision == "deep":
+        steps = [
+            ("router", "Route Decision", "Classify query complexity"),
+            ("query_rewrite_node", "Query Rewrite", "Optimize query terms for web search"),
+            ("planner_node", "Planner Node", "Decompose query into sub-tasks"),
+            ("evidence_node", "Evidence Node", "Concurrently gather search evidence"),
+            ("synthesis_context", "Synthesis Context", "Synthesize findings into structured report")
+        ]
+        if st.session_state.workflow_steps.get("gap_analysis_node") in ["running", "completed", "failed"]:
+            steps.append(("gap_analysis_node", "Gap Analysis Node", "Identify report gaps and generate new queries"))
+    elif st.session_state.route_decision == "simple":
+        steps = [
+            ("router", "Route Decision", "Classify query complexity"),
+            ("query_rewrite_node", "Query Rewrite", "Optimize query terms for web search"),
+            ("search_node", "Search Node", "Query Tavily for top websites"),
+            ("extract_node", "Extract Node", "Scrape text content from URLs"),
+            ("formatter_node", "Formatter Node", "Prepare context for generation"),
+            ("answer_node", "Answer Node", "Generate structured response with citations")
+        ]
+    if steps:
+        workflow_html = f'<div style="font-family: \'Inter\', sans-serif;">'
+        for node_id, label, desc in steps:
+            state = st.session_state.workflow_steps.get(node_id, "pending")
+            if state == "completed":
+                icon, color, icon_style = "✓", "#2e7d32", "background-color: #2e7d32; color: white;"
+            elif state == "skipped":
+                icon, color, icon_style = "―", "#757575", "background-color: #e0e0e0; color: #757575; border: 1px solid #bdbdbd;"
+                desc = desc + " (Skipped)"
+            elif state == "failed":
+                icon, color, icon_style = "✗", "#d32f2f", "background-color: #d32f2f; color: white;"
+            elif state == "running":
+                icon, color, icon_style = "", "#ff9800", "border: 2px solid rgba(0,0,0,0.1); border-left-color: #ff9800; border-radius: 50%; width: 14px; height: 14px; animation: spin 1s linear infinite;"
+            else:
+                icon, color, icon_style = "○", "#757575", "border: 2px solid #bdbdbd; color: #757575; background: transparent;"
+                
+            workflow_html += f"""
+            <div style="padding-left: 12px; margin-bottom: 16px; border-left: 2px solid #e0e0e0; margin-left: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: bold; {icon_style}">
+                        {icon}
+                    </div>
+                    <div>
+                        <strong style="color: {color}; font-size: 13px;">{label}</strong><br/>
+                        <span style="font-size: 11px; color: #757575;">{desc}</span>
+                    </div>
+                </div>
+            </div>
+            """
+        workflow_html += '</div>'
+        workflow_ph.html(workflow_html)
+
+    # Populate Sources Placeholder with current state
+    sources_html = '<div style="font-family: \'Inter\', sans-serif; max-height: 300px; overflow-y: auto;">'
+    sources = st.session_state.get("search_results", [])
+    if not sources:
+        sources_html += '<div style="font-size: 12px; color: #757575; text-align: center;">No sources gathered yet.</div>'
+    else:
+        for idx, src in enumerate(sources, start=1):
+            title = src.get("title", "Source Page")
+            url = src.get("url", "")
+            domain = url.split("//")[-1].split("/")[0] if url else "web"
+            sources_html += f"""
+            <div class="glass-card" style="padding: 10px; margin-bottom: 8px; border-left: 3px solid #2196f3;">
+                <div style="font-size: 12px; font-weight: 500; color: #e0e0e0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">[{idx}] {title}</div>
+                <div style="font-size: 10px; color: #757575;">{domain}</div>
+                <a href="{url}" target="_blank" style="font-size: 10px; color: #2196f3; text-decoration: none;">View Source ↗</a>
+            </div>
+            """
+    sources_html += '</div>'
+    sources_ph.html(sources_html)
+
+    # Populate Timeline (sidebar)
+    if st.session_state.timeline:
+        timeline_html = '<div style="font-family: \'Inter\', sans-serif;">'
+        for tm, msg in st.session_state.timeline[-10:]:
+            timeline_html += f"""
+            <div style="margin-bottom: 8px; font-size: 12px;">
+                <span style="color: #2196f3; font-weight: 500; margin-right: 6px;">{tm}</span>
+                <span style="color: #757575;">{msg}</span>
+            </div>
+            """
+        timeline_html += '</div>'
+        timeline_ph.html(timeline_html)
+
+    # Center Column Content Rendering
     with col_center:
         st.html("<h1 style='color: #2196f3; font-weight: 700; margin-bottom: 0px; font-family: \"Inter\", sans-serif;'>Research Hub</h1>")
         st.html("<p style='color: #757575; font-size: 13px; font-family: \"Inter\", sans-serif;'>Conduct grounded deep research with automated source extraction & citation validation.</p>")
@@ -644,7 +777,7 @@ def main():
             label_visibility="collapsed"
         )
         
-        col_btn1, col_btn2, col_btn3 = st.columns([1.5, 1.5, 7])
+        col_btn1, col_btn2, col_btn3 = st.columns([2.5, 2.5, 7])
         with col_btn1:
             search_clicked = st.button("🚀 Start Research", use_container_width=True)
         with col_btn2:
@@ -694,20 +827,12 @@ def main():
                 "answer_node": "pending",
                 "evidence_node": "pending",
                 "synthesis_context": "pending",
+                "gap_analysis_node": "pending",
             }
             
             st.session_state.is_running = True
             
-            # Set up right panel placeholders in advance
-            with col_right:
-                st.markdown("### 📊 Metrics")
-                stats_ph = st.empty()
-                st.markdown("### 🕒 Execution Logs")
-                timeline_ph = st.empty()
-                st.markdown("### 🔗 Gathered Sources")
-                sources_ph = st.empty()
-            
-            # Setup handler
+            # Setup handler using globally defined placeholders
             handler = StreamlitCallbackHandler(
                 workflow_ph=workflow_ph,
                 timeline_ph=timeline_ph,
@@ -727,12 +852,25 @@ def main():
                 elif selected_mode == "Deep Research":
                     input_state["route"] = "deep"
                     
+                from streamlit.runtime.scriptrunner import get_script_run_ctx
+                ctx = get_script_run_ctx()
+                
                 response = research_router.invoke(
                     input_state,
-                    config={"callbacks": [handler]}
+                    config={
+                        "callbacks": [handler],
+                        "configurable": {
+                            "script_run_ctx": ctx
+                        }
+                    }
                 )
                 
                 st.session_state.final_answer = response.get("final_answer", "No answer compiled.")
+                
+                # Mark any unexecuted pending nodes as skipped
+                for k, v in st.session_state.workflow_steps.items():
+                    if v == "pending":
+                        st.session_state.workflow_steps[k] = "skipped"
                 
                 # Auto save
                 if auto_save:
@@ -762,10 +900,10 @@ def main():
             st.markdown("---")
             
             # Download Actions
-            col_act1, col_act2, col_act3, col_act4 = st.columns([2.5, 2.5, 2.5, 4.5])
+            col_act1, col_act2, col_act3, col_act4 = st.columns([3, 3, 3, 3])
             with col_act1:
                 st.download_button(
-                    label="📄 Download PDF",
+                    label="📄 Export PDF",
                     data=generate_pdf_bytes(st.session_state.final_answer),
                     file_name="research_report.pdf",
                     mime="application/pdf",
@@ -773,14 +911,14 @@ def main():
                 )
             with col_act2:
                 st.download_button(
-                    label="📝 Download Markdown",
+                    label="📝 Export MD",
                     data=st.session_state.final_answer,
                     file_name="research_report.md",
                     mime="text/plain",
                     use_container_width=True
                 )
             with col_act3:
-                if st.button("📋 Copy to Clipboard", use_container_width=True):
+                if st.button("📋 Copy Report", use_container_width=True):
                     st.components.v1.html(f"""
                     <textarea id="reportText" style="display:none;">{st.session_state.final_answer}</textarea>
                     <script>
@@ -797,111 +935,6 @@ def main():
                     st.markdown(f"- {h}")
                     
             st.markdown(st.session_state.final_answer)
-
-    # ----------------------------------
-    # Right Sidebar (Static / Post-Run)
-    # ----------------------------------
-    if not st.session_state.is_running:
-        with col_right:
-            st.markdown("### 📊 Metrics")
-            stats_html = f"""
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-family: 'Inter', sans-serif;">
-                <div class="glass-card" style="text-align: center;">
-                    <div style="font-size: 11px; color: #757575;">Sources Found</div>
-                    <div class="stat-metric">{st.session_state.stats['sources']}</div>
-                </div>
-                <div class="glass-card" style="text-align: center;">
-                    <div style="font-size: 11px; color: #757575;">Citations</div>
-                    <div class="stat-metric">{st.session_state.stats['citations']}</div>
-                </div>
-                <div class="glass-card" style="text-align: center;">
-                    <div style="font-size: 11px; color: #757575;">Search Mode</div>
-                    <div style="font-size: 14px; font-weight: bold; color: #ff9800; margin-top: 6px;">{st.session_state.stats['mode']}</div>
-                </div>
-                <div class="glass-card" style="text-align: center;">
-                    <div style="font-size: 11px; color: #757575;">Research Time</div>
-                    <div style="font-size: 14px; font-weight: bold; color: #2e7d32; margin-top: 6px;">{st.session_state.stats['time']:.1f}s</div>
-                </div>
-            </div>
-            """
-            st.html(stats_html)
-            
-            st.markdown("### 🕒 Timeline")
-            timeline_html = '<div style="font-family: \'Inter\', sans-serif;">'
-            for tm, msg in st.session_state.timeline[-10:]:
-                timeline_html += f"""
-                <div style="margin-bottom: 8px; font-size: 12px;">
-                    <span style="color: #2196f3; font-weight: 500; margin-right: 6px;">{tm}</span>
-                    <span style="color: #757575;">{msg}</span>
-                </div>
-                """
-            timeline_html += '</div>'
-            st.html(timeline_html)
-            
-            st.markdown("### 🔗 Sources")
-            sources_html = '<div style="font-family: \'Inter\', sans-serif; max-height: 300px; overflow-y: auto;">'
-            sources = st.session_state.get("search_results", [])
-            if not sources:
-                sources_html += '<div style="font-size: 12px; color: #757575; text-align: center;">No sources gathered yet.</div>'
-            else:
-                for idx, src in enumerate(sources, start=1):
-                    title = src.get("title", "Source Page")
-                    url = src.get("url", "")
-                    domain = url.split("//")[-1].split("/")[0] if url else "web"
-                    sources_html += f"""
-                    <div class="glass-card" style="padding: 10px; margin-bottom: 8px; border-left: 3px solid #2196f3;">
-                        <div style="font-size: 12px; font-weight: 500; color: #e0e0e0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">[{idx}] {title}</div>
-                        <div style="font-size: 10px; color: #757575;">{domain}</div>
-                        <a href="{url}" target="_blank" style="font-size: 10px; color: #2196f3; text-decoration: none;">View Source ↗</a>
-                    </div>
-                    """
-            sources_html += '</div>'
-            st.html(sources_html)
-            
-            with workflow_ph:
-                html = f'<div style="font-family: \'Inter\', sans-serif;">'
-                steps = []
-                if st.session_state.route_decision == "deep":
-                    steps = [
-                        ("router", "Route Decision", "Classify query complexity"),
-                        ("query_rewrite_node", "Query Rewrite", "Optimize query terms for web search"),
-                        ("planner_node", "Planner Node", "Decompose query into sub-tasks"),
-                        ("evidence_node", "Evidence Node", "Concurrently gather search evidence"),
-                        ("synthesis_context", "Synthesis Context", "Synthesize findings into structured report")
-                    ]
-                else:
-                    steps = [
-                        ("router", "Route Decision", "Classify query complexity"),
-                        ("query_rewrite_node", "Query Rewrite", "Optimize query terms for web search"),
-                        ("search_node", "Search Node", "Query Tavily for top websites"),
-                        ("extract_node", "Extract Node", "Scrape text content from URLs"),
-                        ("formatter_node", "Formatter Node", "Prepare context for generation"),
-                        ("answer_node", "Answer Node", "Generate structured response with citations")
-                    ]
-                for node_id, label, desc in steps:
-                    state = st.session_state.workflow_steps.get(node_id, "pending")
-                    if state == "completed":
-                        icon, color, icon_style = "✓", "#2e7d32", "background-color: #2e7d32; color: white;"
-                    elif state == "failed":
-                        icon, color, icon_style = "✗", "#d32f2f", "background-color: #d32f2f; color: white;"
-                    else:
-                        icon, color, icon_style = "○", "#757575", "border: 2px solid #bdbdbd; color: #757575; background: transparent;"
-                        
-                    html += f"""
-                    <div style="padding-left: 12px; margin-bottom: 16px; border-left: 2px solid #e0e0e0; margin-left: 8px;">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <div style="display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: bold; {icon_style}">
-                                {icon}
-                            </div>
-                            <div>
-                                <strong style="color: {color}; font-size: 13px;">{label}</strong><br/>
-                                <span style="font-size: 11px; color: #757575;">{desc}</span>
-                            </div>
-                        </div>
-                    </div>
-                    """
-                html += '</div>'
-                st.html(html)
 
 if __name__ == "__main__":
     main()

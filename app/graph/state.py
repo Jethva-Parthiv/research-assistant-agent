@@ -1,4 +1,4 @@
-from typing import TypedDict, List
+from typing import TypedDict, List, Dict, Optional
 
 
 class SearchResult(TypedDict):
@@ -39,17 +39,6 @@ class ResearchState(TypedDict):
 
     final_answer: str
 
+    confidence_scores: Optional[Dict[str, float]]
+    retry_count: int
 
-# class ResearchState(TypedDict):
-
-#     query: str
-
-#     rewritten_query: str
-
-#     search_results: List[SearchResult]
-
-#     extracted_contents: List[ExtractedContent]
-
-#     formatted_context: str
-
-#     final_answer: str
