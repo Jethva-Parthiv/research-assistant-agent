@@ -5,7 +5,6 @@ from rich.prompt import Prompt
 from rich.rule import Rule
 from rich.status import Status
 
-from app.services.document_saver import save_document
 from app.graph.workflows.research_router import research_router
 
 
@@ -72,16 +71,8 @@ def main():
 
             response = process_query(query)
 
-            path = save_document(
-                response["final_answer"]
-            )
-
             display_answer(
                 response["final_answer"]
-            )
-
-            console.print(
-                f"\n[green]✓ Saved:[/green] {path}"
             )
 
         except KeyboardInterrupt:

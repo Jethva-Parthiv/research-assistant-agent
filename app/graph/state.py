@@ -41,4 +41,5 @@ class ResearchState(TypedDict):
 
     confidence_scores: Optional[Dict[str, float]]
     retry_count: int
+    report_data: Optional[dict]
 

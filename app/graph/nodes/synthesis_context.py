@@ -3,6 +3,7 @@ from app.core.llm import llm
 from app.services.synthesizer import synthesize_answer
 from app.graph.state import ResearchState
 from app.core.logging import logger
+from app.services.report_parser import parse_markdown_to_report
 
 class ReportEvaluation(BaseModel):
     source_coverage: float = Field(..., description="Grade 1.0 to 5.0 for source coverage")
@@ -46,8 +47,17 @@ def synthesis_context(state: ResearchState):
             "completeness": 3.0
         }
         
+    # Convert answer to structured JSON format
+    report_dict = parse_markdown_to_report(
+        query=state["query"],
+        markdown_report=result,
+        route_used="DEEP",
+        confidence=scores
+    )
+
     return {
         'synthesis_context': result,
         'final_answer': result,
-        'confidence_scores': scores
+        'confidence_scores': scores,
+        'report_data': report_dict
     }

@@ -13,7 +13,6 @@ load_dotenv()
 
 from langchain_core.callbacks import BaseCallbackHandler
 from app.graph.workflows.research_router import research_router
-from app.services.document_saver import save_document
 from app.core.logging import logger
 import logging
 
@@ -632,8 +631,6 @@ def main():
         max_sources = st.slider("Max Sources", min_value=3, max_value=20, value=5)
         search_depth = st.selectbox("Search Depth", ["basic", "advanced"], index=0)
         temperature = st.slider("Temperature", min_value=0.0, max_value=1.0, value=0.0, step=0.1)
-    
-    auto_save = True
         
     st.sidebar.markdown("### 🕒 Timeline")
     timeline_ph = st.sidebar.empty()
@@ -872,20 +869,7 @@ def main():
                     if v == "pending":
                         st.session_state.workflow_steps[k] = "skipped"
                 
-                # Auto save
-                if auto_save:
-                    elapsed = time.time() - handler.start_time
-                    save_document(
-                        st.session_state.final_answer,
-                        metadata={
-                            "Query": query_input,
-                            "Mode": handler.mode.upper(),
-                            "Time": f"{elapsed:.2f}s",
-                            "Sources": len(st.session_state.search_results),
-                            "Citations": len(re.findall(r'\[\d+\]', st.session_state.final_answer))
-                        }
-                    )
-                    handler.add_event("Report saved successfully to data index.")
+
                     
             except Exception as err:
                 st.error(f"Execution failed: {err}")
