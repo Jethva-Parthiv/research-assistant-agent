@@ -1,4 +1,5 @@
 from typing import TypedDict, List, Dict, Optional
+from app.models.claims import ClaimResult
 
 
 class SearchResult(TypedDict):
@@ -42,4 +43,7 @@ class ResearchState(TypedDict):
     confidence_scores: Optional[Dict[str, float]]
     retry_count: int
     report_data: Optional[dict]
+    claims: List[ClaimResult]
+    verified_report: Optional[str]
+    overall_confidence: Optional[float]
 
