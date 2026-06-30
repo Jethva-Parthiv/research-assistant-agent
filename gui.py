@@ -90,6 +90,8 @@ def main():
                 "mode": "Auto"
             }
             st.session_state.workflow_steps = {}
+            st.session_state.claims = []
+            st.session_state.verified_report = None
             st.rerun()
 
         # Placeholders for intermediate outputs in the center
@@ -109,6 +111,8 @@ def main():
             st.session_state.timeline = []
             st.session_state.search_results = []
             st.session_state.planner_tasks = []
+            st.session_state.claims = []
+            st.session_state.verified_report = None
             st.session_state.workflow_steps = {
                 "router": "pending",
                 "query_rewrite_node": "pending",
@@ -157,7 +161,13 @@ def main():
                     }
                 )
                 
-                st.session_state.final_answer = response.get("final_answer", "No answer compiled.")
+                st.session_state.claims = response.get("claims", [])
+                st.session_state.verified_report = response.get("verified_report")
+                
+                if response.get("verified_report"):
+                    st.session_state.final_answer = response.get("verified_report")
+                else:
+                    st.session_state.final_answer = response.get("final_answer", "No answer compiled.")
                 
                 # Mark any unexecuted pending nodes as skipped
                 for k, v in st.session_state.workflow_steps.items():

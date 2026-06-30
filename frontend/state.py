@@ -34,6 +34,10 @@ def init_session_state():
         st.session_state.final_answer = ""
     if "is_running" not in st.session_state:
         st.session_state.is_running = False
+    if "claims" not in st.session_state:
+        st.session_state.claims = []
+    if "verified_report" not in st.session_state:
+        st.session_state.verified_report = None
 
 def get_session_history() -> List[Dict]:
     sessions = []
@@ -124,6 +128,9 @@ def load_session(session: Dict):
         "evidence_node": "completed" if session["mode"].lower() == "deep" else "pending",
         "synthesis_context": "completed" if session["mode"].lower() == "deep" else "pending",
         "gap_analysis_node": "completed" if session["mode"].lower() == "deep" else "pending",
+        "claim_splitter": "completed" if session["mode"].lower() == "deep" else "pending",
+        "verification": "completed" if session["mode"].lower() == "deep" else "pending",
+        "report_assembler": "completed" if session["mode"].lower() == "deep" else "pending",
     }
     st.session_state.timeline = [("Loaded", "Loaded historical report.")]
     st.session_state.search_results = []

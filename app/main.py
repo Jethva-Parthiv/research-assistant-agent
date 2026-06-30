@@ -71,8 +71,9 @@ def main():
 
             response = process_query(query)
 
+            report_content = response.get("verified_report") or response.get("final_answer", "No answer compiled.")
             display_answer(
-                response["final_answer"]
+                report_content
             )
 
         except KeyboardInterrupt:

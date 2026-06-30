@@ -63,6 +63,20 @@ def generate_pdf_bytes(markdown_text: str) -> bytes:
         spaceAfter=4
     )
     
+    def clean_markdown_for_pdf(text: str) -> str:
+        # Convert premium styled span badges into reportlab-friendly font tags
+        text = re.sub(r'<span class="badge-verified"[^>]*><a href="([^"]*)"[^>]*>✓ source</a></span>', r' [<font color="#2e7d32">✓</font> source](\1)', text)
+        text = re.sub(r'<span class="badge-weak"[^>]*><a href="([^"]*)"[^>]*>~ source</a></span>', r' [<font color="#f57f17">~</font> source](\1)', text)
+        text = re.sub(r'<span class="badge-unverified"[^>]*>.*?</span>', r' [<font color="#c62828">?</font> unverified]', text)
+        text = re.sub(r'<span class="badge-conflicted"[^>]*>.*?</span>', r' [<font color="#ef6c00">⚡</font> conflicted]', text)
+
+        # Clean up markdown bold and italics tags
+        cleaned = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', text)
+        cleaned = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', cleaned)
+        # Escape raw ampersands not followed by an entity name (e.g. &bull;, &amp;)
+        cleaned = re.sub(r'&(?!(?:amp|lt|gt|quot|apos|bull);)', '&amp;', cleaned)
+        return cleaned
+
     story = []
     in_code_block = False
     
@@ -83,18 +97,15 @@ def generate_pdf_bytes(markdown_text: str) -> bytes:
             continue
             
         if stripped.startswith('# '):
-            story.append(Paragraph(stripped[2:], title_style))
+            story.append(Paragraph(clean_markdown_for_pdf(stripped[2:]), title_style))
         elif stripped.startswith('## '):
-            story.append(Paragraph(stripped[3:], h1_style))
+            story.append(Paragraph(clean_markdown_for_pdf(stripped[3:]), h1_style))
         elif stripped.startswith('### '):
-            story.append(Paragraph(stripped[4:], h2_style))
+            story.append(Paragraph(clean_markdown_for_pdf(stripped[4:]), h2_style))
         elif stripped.startswith('* ') or stripped.startswith('- '):
-            story.append(Paragraph(f"&bull; {stripped[2:]}", bullet_style))
+            story.append(Paragraph(f"&bull; {clean_markdown_for_pdf(stripped[2:])}", bullet_style))
         else:
-            # Simple clean up of raw inline markdown formatting tags
-            cleaned = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', stripped)
-            cleaned = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', cleaned)
-            story.append(Paragraph(cleaned, body_style))
+            story.append(Paragraph(clean_markdown_for_pdf(stripped), body_style))
             
     doc.build(story)
     pdf_data = buffer.getvalue()

@@ -32,10 +32,13 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
                 ("query_rewrite_node", "Query Rewrite", "Optimize query terms for web search"),
                 ("planner_node", "Planner Node", "Decompose query into sub-tasks"),
                 ("evidence_node", "Evidence Node", "Concurrently gather search evidence"),
-                ("synthesis_context", "Synthesis Context", "Synthesize findings into structured report")
+                ("synthesis_context", "Synthesis Context", "Synthesize findings into structured report"),
+                ("claim_splitter", "Claim Splitter", "Deconstruct report into atomic claims"),
+                ("verification", "Verification Node", "Verify claims against extracted source passages"),
+                ("report_assembler", "Report Assembler", "Compile verified report with status badges")
             ]
             if st.session_state.workflow_steps.get("gap_analysis_node") in ["running", "completed", "failed"]:
-                steps.append(("gap_analysis_node", "Gap Analysis Node", "Identify report gaps and generate new queries"))
+                steps.insert(5, ("gap_analysis_node", "Gap Analysis Node", "Identify report gaps and generate new queries"))
         else:
             steps = [
                 ("router", "Route Decision", "Classify query complexity"),
