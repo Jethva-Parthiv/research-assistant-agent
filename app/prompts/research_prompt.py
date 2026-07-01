@@ -18,4 +18,5 @@ INSTRUCTIONS:
 - Mention uncertainty if information is incomplete
 - Add citations like [1], [2]
 - End with a Sources section
+- DO NOT include any conversational preamble, introduction, or roleplay meta-commentary framing (such as "As an advanced AI research assistant...", "As an AI...", or "Here is the answer..."). Start the report directly with the content or title.
 """

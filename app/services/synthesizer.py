@@ -40,6 +40,7 @@ def synthesize_answer(
     - Highlight tradeoffs
     - Use citations
     - Produce structured markdown
+    - DO NOT include any conversational preamble, introduction, or roleplay meta-commentary framing (such as "As a senior research analyst, I have synthesized...", "As an AI...", or "Here is the report..."). Start the report directly with the content or title.
     """
 
     chain = llm | parser
