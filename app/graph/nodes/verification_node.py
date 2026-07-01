@@ -1,7 +1,9 @@
 import asyncio
 import threading
 import queue
+import contextvars
 from typing import List
+from langchain_core.runnables import RunnableConfig
 from app.graph.state import ResearchState
 from app.agents.claim_verifier import verify_claim
 from app.models.claims import ClaimResult
@@ -25,7 +27,8 @@ def run_async_synchronously(coro):
         finally:
             loop.close()
             
-    thread = threading.Thread(target=worker)
+    ctx = contextvars.copy_context()
+    thread = threading.Thread(target=ctx.run, args=(worker,))
     thread.start()
     thread.join()
     
@@ -35,7 +38,7 @@ def run_async_synchronously(coro):
     else:
         raise val
 
-def verification_node(state: ResearchState):
+def verification_node(state: ResearchState, config: RunnableConfig = None):
     claims: List[ClaimResult] = state.get("claims") or []
     extracted = state.get("extracted_contents") or []
     evidence = state.get("evidence") or []
@@ -66,7 +69,7 @@ def verification_node(state: ResearchState):
         if delay > 0:
             await asyncio.sleep(delay)
         try:
-            result = await verify_claim(claim_obj.claim_text, passages)
+            result = await verify_claim(claim_obj.claim_text, passages, config=config)
             return result
         except Exception as err:
             logger.error(f"Error verifying claim '{claim_obj.claim_text}': {err}", exc_info=True)

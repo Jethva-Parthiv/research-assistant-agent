@@ -26,13 +26,13 @@ def render_report_view():
             )
         with col_act3:
             if st.button("📋 Copy Report", use_container_width=True):
-                st.components.v1.html(f"""
+                st.html(f"""
                 <textarea id="reportText" style="display:none;">{st.session_state.final_answer}</textarea>
                 <script>
                 navigator.clipboard.writeText(document.getElementById('reportText').value);
                 alert('Copied report to clipboard!');
                 </script>
-                """, height=0)
+                """)
                 
         st.markdown("## 🔍 Compiled Report")
         

@@ -19,7 +19,16 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
         self.start_time = time.time()
         self.mode = "simple"
         
+    @property
+    def has_session_state(self) -> bool:
+        try:
+            return "workflow_steps" in st.session_state
+        except Exception:
+            return False
+            
     def add_event(self, text: str):
+        if not self.has_session_state:
+            return
         now = datetime.now().strftime("%H:%M:%S")
         st.session_state.timeline.append((now, text))
         self.render_timeline()
@@ -161,6 +170,8 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
         self.sources_ph.html(html)
 
     def refresh_ui(self, active_node=""):
+        if not self.has_session_state:
+            return
         self.update_workflow(active_node)
         self.render_sources()
         
@@ -174,6 +185,8 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
         self.render_stats(len(results), pages, citations)
 
     def on_chain_start(self, serialized, prompts, **kwargs):
+        if not self.has_session_state:
+            return
         run_id = kwargs.get("run_id")
         metadata = kwargs.get("metadata", {})
         node_name = metadata.get("langgraph_node")
@@ -205,6 +218,8 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
             self.refresh_ui(node_name)
 
     def on_chain_end(self, outputs, **kwargs):
+        if not self.has_session_state:
+            return
         run_id = kwargs.get("run_id")
         node_name = self.run_to_node.get(run_id)
         

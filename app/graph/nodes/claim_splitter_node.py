@@ -8,7 +8,7 @@ from app.models.claims import ClaimResult
 class ClaimsList(BaseModel):
     claims: List[str] = Field(
         ...,
-        description="A list of 5 to 20 atomic, independently verifiable factual claims extracted from the research report."
+        description="A list of at most 5 critical, atomic, independently verifiable factual claims extracted from the research report."
     )
 
 def claim_splitter_node(state: ResearchState):
@@ -25,10 +25,11 @@ def claim_splitter_node(state: ResearchState):
 
     Rules for splitting:
     - One claim = one verifiable fact (a number, a name, a date, a causal statement)
+    - Select only the most critical, high-impact claims that actually require verification
     - Ignore transitional/summary sentences ("In conclusion...", "This shows that...")
     - Ignore opinion framing ("experts believe...", "it is argued that...")
     - Keep each claim under 30 words
-    - Return 5–20 claims maximum; merge minor claims if there are too many
+    - Return at most 5 claims (or fewer if there are not enough critical factual statements)
 
     RESEARCH REPORT:
     {final_answer}
@@ -39,7 +40,7 @@ def claim_splitter_node(state: ResearchState):
     try:
         structured_llm = llm.with_structured_output(ClaimsList)
         result = structured_llm.invoke(prompt)
-        claims = result.claims
+        claims = result.claims[:5]
     except Exception as err:
         logger.error(f"Failed to split claims: {err}", exc_info=True)
         claims = []

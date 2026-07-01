@@ -6,3 +6,9 @@ llm = ChatGoogleGenerativeAI(
     model=CHAT_MODEL_NAME,
     temperature=0
 )
+
+def get_llm():
+    return ChatGoogleGenerativeAI(
+        model=CHAT_MODEL_NAME,
+        temperature=0
+    )

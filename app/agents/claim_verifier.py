@@ -1,7 +1,8 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
-from app.core.llm import llm
+from app.core.llm import get_llm
 from app.models.claims import ClaimResult
+from langchain_core.runnables import RunnableConfig
 
 class ClaimVerifierOutput(BaseModel):
     status: Literal["verified", "weak", "unverified", "conflicted"] = Field(
@@ -25,7 +26,7 @@ class ClaimVerifierOutput(BaseModel):
         description="A one-sentence explanation of the verdict based on the provided passages."
     )
 
-async def verify_claim(claim: str, passages: List[dict]) -> ClaimResult:
+async def verify_claim(claim: str, passages: List[dict], config: RunnableConfig = None) -> ClaimResult:
     # Format the passages into a clear text reference block
     passages_text = ""
     for idx, passage in enumerate(passages):
@@ -57,8 +58,9 @@ async def verify_claim(claim: str, passages: List[dict]) -> ClaimResult:
     """
 
     try:
-        structured_llm = llm.with_structured_output(ClaimVerifierOutput)
-        result = await structured_llm.ainvoke(prompt)
+        model = get_llm()
+        structured_llm = model.with_structured_output(ClaimVerifierOutput)
+        result = await structured_llm.ainvoke(prompt, config=config)
         
         return ClaimResult(
             claim_text=claim,
