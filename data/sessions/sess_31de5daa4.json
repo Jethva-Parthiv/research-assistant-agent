@@ -1,0 +1,20 @@
+{
+  "query": "",
+  "rewritten_query": "",
+  "route_decision": "auto",
+  "final_answer": "",
+  "verified_report": null,
+  "claims": [],
+  "stats": {
+    "sources": 0,
+    "pages": 0,
+    "time": 0.0,
+    "citations": 0,
+    "mode": "Auto"
+  },
+  "timeline": [],
+  "search_results": [],
+  "planner_tasks": [],
+  "workflow_steps": {},
+  "history": []
+}

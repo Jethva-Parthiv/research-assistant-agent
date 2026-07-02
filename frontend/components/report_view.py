@@ -7,7 +7,7 @@ def render_report_view():
         st.markdown("---")
         
         # Download Actions
-        col_act1, col_act2, col_act3, _ = st.columns([3, 3, 3, 3])
+        col_act1, col_act2, _ = st.columns([3, 3, 6])
         with col_act1:
             st.download_button(
                 label="📄 Export PDF",
@@ -24,15 +24,6 @@ def render_report_view():
                 mime="text/plain",
                 use_container_width=True
             )
-        with col_act3:
-            if st.button("📋 Copy Report", use_container_width=True):
-                st.html(f"""
-                <textarea id="reportText" style="display:none;">{st.session_state.final_answer}</textarea>
-                <script>
-                navigator.clipboard.writeText(document.getElementById('reportText').value);
-                alert('Copied report to clipboard!');
-                </script>
-                """)
                 
         st.markdown("## 🔍 Compiled Report")
         
@@ -91,11 +82,11 @@ def render_report_view():
                 table_html = """
                 <table style="width:100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 14px; margin-top: 8px;">
                     <thead>
-                        <tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
-                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #495057;">Claim</th>
-                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #495057; width: 140px;">Status</th>
-                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #495057; width: 100px;">Confidence</th>
-                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #495057; width: 140px;">Source</th>
+                        <tr style="background-color: #1e1e1e; border-bottom: 2px solid #444444;">
+                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #ffffff;">Claim</th>
+                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #ffffff; width: 140px;">Status</th>
+                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #ffffff; width: 100px;">Confidence</th>
+                            <th style="padding: 12px 10px; text-align: left; font-weight: 600; color: #ffffff; width: 140px;">Source</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -105,22 +96,22 @@ def render_report_view():
                     # Select colors: green for verified, yellow/amber for weak, red for unverified/conflicted
                     status_text = c.status.upper()
                     if c.status == "verified":
-                        bg_color = "#e8f5e9"
-                        text_color = "#2e7d32"
+                        bg_color = "rgba(46, 125, 50, 0.15)"
+                        text_color = "#81c784"
                     elif c.status == "weak":
-                        bg_color = "#fffde7"
-                        text_color = "#f57f17"
+                        bg_color = "rgba(245, 127, 23, 0.15)"
+                        text_color = "#fff176"
                     else:  # unverified or conflicted
-                        bg_color = "#ffebee"
-                        text_color = "#c62828"
+                        bg_color = "rgba(198, 40, 40, 0.15)"
+                        text_color = "#e57373"
                         
-                    source_link = f'<a href="{c.source_url}" target="_blank" style="color: #0d6efd; text-decoration: none; font-weight: 500;">✓ View Source</a>' if c.source_url else '<span style="color: #6c757d; font-style: italic;">No URL</span>'
+                    source_link = f'<a href="{c.source_url}" target="_blank" style="color: #64b5f6; text-decoration: none; font-weight: 500;">✓ View Source</a>' if c.source_url else '<span style="color: #888888; font-style: italic;">No URL</span>'
                     
                     table_html += f"""
-                        <tr style="border-bottom: 1px solid #dee2e6;">
-                            <td style="padding: 12px 10px; color: #212529; line-height: 1.5;">{c.claim_text}</td>
-                            <td style="padding: 12px 10px; font-weight: 600;"><span style="background-color: {bg_color}; color: {text_color}; padding: 4px 10px; border-radius: 4px; display: inline-block; font-size: 0.85em; border: 1px solid {text_color}40;">{status_text}</span></td>
-                            <td style="padding: 12px 10px; color: #495057; font-weight: 500;">{c.confidence:.2f}</td>
+                        <tr style="border-bottom: 1px solid #333333;">
+                            <td style="padding: 12px 10px; color: #e0e0e0; line-height: 1.5;">{c.claim_text}</td>
+                            <td style="padding: 12px 10px; font-weight: 600;"><span style="background-color: {bg_color}; color: {text_color}; padding: 4px 10px; border-radius: 4px; display: inline-block; font-size: 0.85em; border: 1px solid {text_color}60;">{status_text}</span></td>
+                            <td style="padding: 12px 10px; color: #e0e0e0; font-weight: 500;">{c.confidence:.2f}</td>
                             <td style="padding: 12px 10px;">{source_link}</td>
                         </tr>
                     """

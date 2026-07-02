@@ -1,0 +1,298 @@
+{
+  "query": "what is n8n",
+  "rewritten_query": "what is n8n workflow automation tool and how does it work",
+  "route_decision": "simple",
+  "final_answer": "### What is n8n?\n\n**n8n** (a numeronym for \"Nodemation\") is an open-source workflow automation platform [2, 3]. It functions as a digital assistant that allows users to schedule tasks, sync data between different applications, and automate repetitive business, IT, or personal processes [1, 2]. \n\nBy connecting disparate systems that do not normally communicate with each other, n8n enables users to streamline operations without requiring advanced coding skills [1, 2]. It is designed to be flexible, allowing for both simple task automation and the creation of complex, multi-step systems [1, 3].\n\n### How Does n8n Work?\n\nn8n operates using a visual, node-based interface that allows users to build workflows without writing custom code [1, 3].\n\n*   **Nodes:** These are the building blocks of the platform. Each node represents a specific action, such as fetching data from an API, updating a spreadsheet, or sending an email [1, 3].\n*   **Workflows:** A workflow is a collection of nodes connected together to perform a set of actions based on a specific trigger [1, 3].\n*   **Visual Interface:** Users drag and connect these nodes within a visual editor to define the logic of the automation [1, 3].\n*   **Integrations:** The platform supports over 400 integrations out of the box, allowing it to connect with various tools like GitHub, AWS, OpenAI, Telegram, Typeform, and Slack [3].\n*   **Developer Flexibility:** While it is a no-code platform, it remains developer-friendly. Users can write custom JavaScript or Python code within workflows, import npm packages, or connect to any API that lacks a prebuilt node [3].\n*   **Self-Hosting:** Because n8n is open-source, users have the option to self-host the platform on their own servers. This provides increased control over data privacy, which is particularly beneficial for industries such as finance and healthcare where sensitive information must remain within a private environment [2, 3].\n\n### Sources\n\n[1] https://www.hostinger.com/tutorials/what-is-n8n  \n[2] https://www.scalahosting.com/blog/what-is-n8n-and-how-to-use-it  \n[3] https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n  \n[4] https://medium.com/data-and-beyond/part-1-introduction-to-n8n-what-it-is-and-how-it-works-74c214de769e",
+  "verified_report": null,
+  "claims": [],
+  "stats": {
+    "sources": 5,
+    "pages": 4,
+    "time": 23.88391947746277,
+    "citations": 6,
+    "mode": "SIMPLE"
+  },
+  "timeline": [
+    [
+      "20:03:01",
+      "Classifying query route..."
+    ],
+    [
+      "20:03:01",
+      "Classifying query route..."
+    ],
+    [
+      "20:03:08",
+      "Classifying query route..."
+    ],
+    [
+      "20:03:09",
+      "Classifying query route..."
+    ],
+    [
+      "20:03:09",
+      "Route selected: **SIMPLE**"
+    ],
+    [
+      "20:03:09",
+      "Rewriting search query..."
+    ],
+    [
+      "20:03:09",
+      "Rewriting search query..."
+    ],
+    [
+      "20:03:15",
+      "Rewriting search query..."
+    ],
+    [
+      "20:03:15",
+      "Search terms optimized successfully."
+    ],
+    [
+      "20:03:15",
+      "Querying Tavily Web Index..."
+    ],
+    [
+      "20:03:16",
+      "Retrieved 5 search sources."
+    ],
+    [
+      "20:03:16",
+      "Scraping and extracting full webpage contents..."
+    ],
+    [
+      "20:03:18",
+      "Extracted content from 4 target domains."
+    ],
+    [
+      "20:03:18",
+      "Formatting references for answer builder..."
+    ],
+    [
+      "20:03:18",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:03:18",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:03:21",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:03:21",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:03:25",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:03:25",
+      "Report synthesis complete."
+    ]
+  ],
+  "search_results": [
+    {
+      "url": "https://www.hostinger.com/tutorials/what-is-n8n",
+      "title": "What is n8n? Understanding the workflow automation tool",
+      "content": "**n8n** is a workflow automation tool that lets you schedule tasks and move data between many of the apps, tools, platforms, and services your team uses every day. If you\u2019ve ever wished you could automate all the boring, repetitive business, IT, or even personal tasks that span multiple apps but that require no advanced skills, n8n might be exactly what you need. In this guide, we\u2019ll break down what n8n is, how it works, and why many people choose it over similar AI automation tools \u2013 in particular, you\u2019ll see how it compares to Zapier. Think of it as a digital assistant that handles repetitive work for you by scheduling tasks, leveraging n8n integrations to connect disparate systems, or automatically moving data between different apps that don\u2019t normally communicate with each other out of the box. It provides a visual interface with templates for common workflows so you can save time and focus on productivity without having to develop a custom automation tool.",
+      "score": 0.95176035,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.scalahosting.com/blog/what-is-n8n-and-how-to-use-it",
+      "title": "What is n8n and How to Use it? | ScalaHosting Blog",
+      "content": "An open-source platform called **n8n** promises to help with all this. It\u2019s designed to be a critical component in **automating routine business procedures, syncing data between apps, or creating custom workflows**. Unlike other automation tools and systems, **you can self-host n8n** and retain complete control over your data. You can adapt and integrate it into your work environment, and its open-source nature allows you to implement custom logic and solutions tailored to your specific requirements. n8n is a numeronym (an abbreviation that uses a number to represent omitted letters) for \u201c**Nodemation**.\u201d\u00a0 Nodemation, on the other hand, is a combination of the words **\u201cnode\u201d** and **\u201cautomation**.\u201d. Its developers describe it as \u201c*a workflow automation platform that uniquely combines AI capabilities with business process automation, giving technical teams the flexibility of code with the speed of no-code.*\u201c. Even if your particular service isn\u2019t listed as an integration, you can use a custom API to integrate it into your n8n workflow.",
+      "score": 0.8660535,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/automation/comments/1lv695o/can_someone_explain_n8n_to_me_like_im_mentally",
+      "title": "Can someone explain n8n to me like I'm mentally disabled - Reddit",
+      "content": "N8N is just a workflow automation tool, with \"ai agent\" capabilities included. N8N is also free if you self-host it. Economy-Brain-9077.",
+      "score": 0.8512743,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n",
+      "title": "A Beginner\u2019s Guide to Automation with n8n",
+      "content": "# A Beginner\u2019s Guide to Automation with n8n. Whether it\u2019s moving data between apps, triggering actions when something changes, or building smart systems that run on their own, automation can save hours every week. The problem is that most automation platforms make you choose between flexibility and simplicity. Writing your own scripts in Python or JavaScript gives you full control but takes more time to build and maintain. It is an open-source workflow automation platform that provides both control and simplicity. You can drag and connect nodes to create workflows or write code when needed. In this article, we\u2019ll learn how to build and deploy your own automation workflows using n8n. By the end, you\u2019ll have a working automation server and the knowledge to create smart, self-running workflows for any use case. This large library of ready-to-use nodes means you can connect most tools you use every day without needing to write any code at all.",
+      "score": 0.8479807,
+      "raw_content": null
+    },
+    {
+      "url": "https://medium.com/data-and-beyond/part-1-introduction-to-n8n-what-it-is-and-how-it-works-74c214de769e",
+      "title": "Part 1: Introduction to n8n \u2014 What It Is and How It Works",
+      "content": "## Data And Beyond. Writing guide: https://medium.com/data-and-beyond/how-to-write-for-data-and-beyond-b83ff0f3813e. Today, we\u2019re kicking off our journey into the world of automation with n8n \u2014 the one-stop workflow automation platform that\u2019s revolutionizing how we connect apps and simplify our daily tasks. If you\u2019ve ever felt overwhelmed by juggling multiple apps, manual data entry, and repetitive tasks, you\u2019re in the right place. > Before we proceed further, I\u2019d like to invite you on a deeper exploration into the world of generative AI with my book, **\u201cA Generative Journey to AI\u201d**. > This book is your ultimate guide to mastering the foundations and cutting-edge innovations in generative AI, offering insights and practical strategies to transform your understanding and work in the field. Thank you for your support, and let\u2019s dive in! ## Create an account to read\u00a0the\u00a0full\u00a0story. If you\u2019re new to Medium, create a new account to read this story on us. ## Published in Data And Beyond.",
+      "score": 0.8361405,
+      "raw_content": null
+    }
+  ],
+  "planner_tasks": [],
+  "workflow_steps": {
+    "router": "completed",
+    "query_rewrite_node": "completed",
+    "planner_node": "skipped",
+    "search_node": "completed",
+    "extract_node": "completed",
+    "formatter_node": "completed",
+    "answer_node": "completed",
+    "evidence_node": "skipped",
+    "synthesis_context": "skipped",
+    "gap_analysis_node": "skipped",
+    "simple": "completed"
+  },
+  "history": [
+    {
+      "query": "what is n8n",
+      "mode": "SIMPLE",
+      "date": "Jul 02, 20:03",
+      "final_answer": "### What is n8n?\n\n**n8n** (a numeronym for \"Nodemation\") is an open-source workflow automation platform [2, 3]. It functions as a digital assistant that allows users to schedule tasks, sync data between different applications, and automate repetitive business, IT, or personal processes [1, 2]. \n\nBy connecting disparate systems that do not normally communicate with each other, n8n enables users to streamline operations without requiring advanced coding skills [1, 2]. It is designed to be flexible, allowing for both simple task automation and the creation of complex, multi-step systems [1, 3].\n\n### How Does n8n Work?\n\nn8n operates using a visual, node-based interface that allows users to build workflows without writing custom code [1, 3].\n\n*   **Nodes:** These are the building blocks of the platform. Each node represents a specific action, such as fetching data from an API, updating a spreadsheet, or sending an email [1, 3].\n*   **Workflows:** A workflow is a collection of nodes connected together to perform a set of actions based on a specific trigger [1, 3].\n*   **Visual Interface:** Users drag and connect these nodes within a visual editor to define the logic of the automation [1, 3].\n*   **Integrations:** The platform supports over 400 integrations out of the box, allowing it to connect with various tools like GitHub, AWS, OpenAI, Telegram, Typeform, and Slack [3].\n*   **Developer Flexibility:** While it is a no-code platform, it remains developer-friendly. Users can write custom JavaScript or Python code within workflows, import npm packages, or connect to any API that lacks a prebuilt node [3].\n*   **Self-Hosting:** Because n8n is open-source, users have the option to self-host the platform on their own servers. This provides increased control over data privacy, which is particularly beneficial for industries such as finance and healthcare where sensitive information must remain within a private environment [2, 3].\n\n### Sources\n\n[1] https://www.hostinger.com/tutorials/what-is-n8n  \n[2] https://www.scalahosting.com/blog/what-is-n8n-and-how-to-use-it  \n[3] https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n  \n[4] https://medium.com/data-and-beyond/part-1-introduction-to-n8n-what-it-is-and-how-it-works-74c214de769e",
+      "verified_report": null,
+      "claims": [],
+      "stats": {
+        "sources": 5,
+        "pages": 4,
+        "time": 23.88391947746277,
+        "citations": 6,
+        "mode": "SIMPLE"
+      },
+      "timeline": [
+        [
+          "20:03:01",
+          "Classifying query route..."
+        ],
+        [
+          "20:03:01",
+          "Classifying query route..."
+        ],
+        [
+          "20:03:08",
+          "Classifying query route..."
+        ],
+        [
+          "20:03:09",
+          "Classifying query route..."
+        ],
+        [
+          "20:03:09",
+          "Route selected: **SIMPLE**"
+        ],
+        [
+          "20:03:09",
+          "Rewriting search query..."
+        ],
+        [
+          "20:03:09",
+          "Rewriting search query..."
+        ],
+        [
+          "20:03:15",
+          "Rewriting search query..."
+        ],
+        [
+          "20:03:15",
+          "Search terms optimized successfully."
+        ],
+        [
+          "20:03:15",
+          "Querying Tavily Web Index..."
+        ],
+        [
+          "20:03:16",
+          "Retrieved 5 search sources."
+        ],
+        [
+          "20:03:16",
+          "Scraping and extracting full webpage contents..."
+        ],
+        [
+          "20:03:18",
+          "Extracted content from 4 target domains."
+        ],
+        [
+          "20:03:18",
+          "Formatting references for answer builder..."
+        ],
+        [
+          "20:03:18",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:03:18",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:03:21",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:03:21",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:03:25",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:03:25",
+          "Report synthesis complete."
+        ]
+      ],
+      "search_results": [
+        {
+          "url": "https://www.hostinger.com/tutorials/what-is-n8n",
+          "title": "What is n8n? Understanding the workflow automation tool",
+          "content": "**n8n** is a workflow automation tool that lets you schedule tasks and move data between many of the apps, tools, platforms, and services your team uses every day. If you\u2019ve ever wished you could automate all the boring, repetitive business, IT, or even personal tasks that span multiple apps but that require no advanced skills, n8n might be exactly what you need. In this guide, we\u2019ll break down what n8n is, how it works, and why many people choose it over similar AI automation tools \u2013 in particular, you\u2019ll see how it compares to Zapier. Think of it as a digital assistant that handles repetitive work for you by scheduling tasks, leveraging n8n integrations to connect disparate systems, or automatically moving data between different apps that don\u2019t normally communicate with each other out of the box. It provides a visual interface with templates for common workflows so you can save time and focus on productivity without having to develop a custom automation tool.",
+          "score": 0.95176035,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.scalahosting.com/blog/what-is-n8n-and-how-to-use-it",
+          "title": "What is n8n and How to Use it? | ScalaHosting Blog",
+          "content": "An open-source platform called **n8n** promises to help with all this. It\u2019s designed to be a critical component in **automating routine business procedures, syncing data between apps, or creating custom workflows**. Unlike other automation tools and systems, **you can self-host n8n** and retain complete control over your data. You can adapt and integrate it into your work environment, and its open-source nature allows you to implement custom logic and solutions tailored to your specific requirements. n8n is a numeronym (an abbreviation that uses a number to represent omitted letters) for \u201c**Nodemation**.\u201d\u00a0 Nodemation, on the other hand, is a combination of the words **\u201cnode\u201d** and **\u201cautomation**.\u201d. Its developers describe it as \u201c*a workflow automation platform that uniquely combines AI capabilities with business process automation, giving technical teams the flexibility of code with the speed of no-code.*\u201c. Even if your particular service isn\u2019t listed as an integration, you can use a custom API to integrate it into your n8n workflow.",
+          "score": 0.8660535,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.reddit.com/r/automation/comments/1lv695o/can_someone_explain_n8n_to_me_like_im_mentally",
+          "title": "Can someone explain n8n to me like I'm mentally disabled - Reddit",
+          "content": "N8N is just a workflow automation tool, with \"ai agent\" capabilities included. N8N is also free if you self-host it. Economy-Brain-9077.",
+          "score": 0.8512743,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n",
+          "title": "A Beginner\u2019s Guide to Automation with n8n",
+          "content": "# A Beginner\u2019s Guide to Automation with n8n. Whether it\u2019s moving data between apps, triggering actions when something changes, or building smart systems that run on their own, automation can save hours every week. The problem is that most automation platforms make you choose between flexibility and simplicity. Writing your own scripts in Python or JavaScript gives you full control but takes more time to build and maintain. It is an open-source workflow automation platform that provides both control and simplicity. You can drag and connect nodes to create workflows or write code when needed. In this article, we\u2019ll learn how to build and deploy your own automation workflows using n8n. By the end, you\u2019ll have a working automation server and the knowledge to create smart, self-running workflows for any use case. This large library of ready-to-use nodes means you can connect most tools you use every day without needing to write any code at all.",
+          "score": 0.8479807,
+          "raw_content": null
+        },
+        {
+          "url": "https://medium.com/data-and-beyond/part-1-introduction-to-n8n-what-it-is-and-how-it-works-74c214de769e",
+          "title": "Part 1: Introduction to n8n \u2014 What It Is and How It Works",
+          "content": "## Data And Beyond. Writing guide: https://medium.com/data-and-beyond/how-to-write-for-data-and-beyond-b83ff0f3813e. Today, we\u2019re kicking off our journey into the world of automation with n8n \u2014 the one-stop workflow automation platform that\u2019s revolutionizing how we connect apps and simplify our daily tasks. If you\u2019ve ever felt overwhelmed by juggling multiple apps, manual data entry, and repetitive tasks, you\u2019re in the right place. > Before we proceed further, I\u2019d like to invite you on a deeper exploration into the world of generative AI with my book, **\u201cA Generative Journey to AI\u201d**. > This book is your ultimate guide to mastering the foundations and cutting-edge innovations in generative AI, offering insights and practical strategies to transform your understanding and work in the field. Thank you for your support, and let\u2019s dive in! ## Create an account to read\u00a0the\u00a0full\u00a0story. If you\u2019re new to Medium, create a new account to read this story on us. ## Published in Data And Beyond.",
+          "score": 0.8361405,
+          "raw_content": null
+        }
+      ],
+      "planner_tasks": [],
+      "workflow_steps": {
+        "router": "completed",
+        "query_rewrite_node": "completed",
+        "planner_node": "skipped",
+        "search_node": "completed",
+        "extract_node": "completed",
+        "formatter_node": "completed",
+        "answer_node": "completed",
+        "evidence_node": "skipped",
+        "synthesis_context": "skipped",
+        "gap_analysis_node": "skipped",
+        "simple": "completed"
+      }
+    }
+  ]
+}

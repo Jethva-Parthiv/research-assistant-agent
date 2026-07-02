@@ -1,0 +1,298 @@
+{
+  "query": "what is n8n",
+  "rewritten_query": "what is n8n workflow automation tool and how does it work",
+  "route_decision": "simple",
+  "final_answer": "### What is n8n?\n\nn8n (pronounced \u201cn-eight-n\u201d) is a low-code, open-source workflow automation platform built with Node.js [1, 2]. It is designed to allow users to orchestrate logic, connect various services, and scale pipelines with minimal boilerplate [1]. \n\nThe tool is characterized by its flexibility, offering a balance between the simplicity of no-code visual interfaces and the power of custom coding [3]. It can be self-hosted on a user's own server\u2014which is particularly beneficial for industries requiring high data privacy\u2014or used via cloud-hosted setups [2, 3, 4].\n\n### How n8n Works\n\nn8n operates on a node-based architecture, where workflows are constructed visually in a browser-based interface [4]. \n\n#### Workflow Structure\nAn n8n workflow is an automated sequence of tasks consisting of multiple nodes [2]. These nodes represent individual steps or actions, such as sending an email, scraping a website, transforming data, or connecting to an API [4]. A typical workflow includes:\n\n*   **Trigger Nodes:** These initiate the workflow based on specific events, such as a webhook or a time-based trigger [2, 4].\n*   **Action Nodes:** These perform specific tasks, such as querying databases, sending messages, or calling APIs [4].\n*   **Logic Nodes:** These are used to control the path of the workflow by adding conditions, loops, or custom code [4].\n\n#### Customization and Integration\nWhile n8n is a visual, no-code tool, it is also developer-friendly [2, 3]. Users can:\n*   **Integrate Services:** It supports over 400 integrations out of the box, including tools like Slack, Google Sheets, GitHub, AWS, and OpenAI [3, 4].\n*   **Add Custom Logic:** Users can incorporate JavaScript or Python functions directly into their workflows [2, 3].\n*   **Extend Functionality:** It allows for the import of libraries from the Node package manager (npm) or Python, and users can connect to any API even if a prebuilt node does not exist [2, 3].\n\n### Use Cases\nn8n is used to automate a wide range of tasks, including:\n*   **AI-Driven Automations:** Extracting data, processing it, sending it to an LLM, and presenting the results [1].\n*   **Marketing:** Capturing form responses and automating email follow-ups [4].\n*   **Finance:** Updating financial spreadsheets with daily exchange rates [4].\n*   **E-commerce:** Synchronizing inventory across platforms following a sale [4].\n*   **Development:** Monitoring GitHub commits to trigger CI/CD pipelines [4].\n\n### Sources\n[1] https://workos.com/blog/n8n-the-workflow-automation-tool-for-the-ai-age\n[2] https://www.codecademy.com/article/build-ai-workflows-with-n8n\n[3] https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n\n[4] https://www.linkedin.com/pulse/what-n8n-beginners-guide-workflow-automation-tool-sandaruwan-upfic",
+  "verified_report": null,
+  "claims": [],
+  "stats": {
+    "sources": 5,
+    "pages": 4,
+    "time": 38.614380836486816,
+    "citations": 16,
+    "mode": "SIMPLE"
+  },
+  "timeline": [
+    [
+      "20:18:16",
+      "Classifying query route..."
+    ],
+    [
+      "20:18:16",
+      "Classifying query route..."
+    ],
+    [
+      "20:18:18",
+      "Classifying query route..."
+    ],
+    [
+      "20:18:19",
+      "Classifying query route..."
+    ],
+    [
+      "20:18:19",
+      "Route selected: **SIMPLE**"
+    ],
+    [
+      "20:18:19",
+      "Rewriting search query..."
+    ],
+    [
+      "20:18:19",
+      "Rewriting search query..."
+    ],
+    [
+      "20:18:26",
+      "Rewriting search query..."
+    ],
+    [
+      "20:18:26",
+      "Search terms optimized successfully."
+    ],
+    [
+      "20:18:26",
+      "Querying Tavily Web Index..."
+    ],
+    [
+      "20:18:29",
+      "Retrieved 5 search sources."
+    ],
+    [
+      "20:18:29",
+      "Scraping and extracting full webpage contents..."
+    ],
+    [
+      "20:18:32",
+      "Extracted content from 4 target domains."
+    ],
+    [
+      "20:18:32",
+      "Formatting references for answer builder..."
+    ],
+    [
+      "20:18:32",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:18:32",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:18:48",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:18:48",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:18:52",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "20:18:52",
+      "Report synthesis complete."
+    ]
+  ],
+  "search_results": [
+    {
+      "url": "https://workos.com/blog/n8n-the-workflow-automation-tool-for-the-ai-age",
+      "title": "n8n: The workflow automation tool for the AI age - WorkOS",
+      "content": "# n8n: The workflow automation tool for the AI age. That\u2019s why tools like n8n are gaining momentum:\u00a0As a self-hostable, open-source automation platform, n8n lets you orchestrate logic, connect services, and scale pipelines with minimal boilerplate. In the LLM-enhanced era, engineers repeatedly build the same types of pipelines: extract data from one or more sources, process it, send it to an LLM, and present the results in a clean, usable interface. As a self-hostable, open-source automation platform, n8n lets you orchestrate logic, connect services, and scale pipelines with minimal boilerplate. It offers a visual interface where you connect nodes\u2014each representing a step in a process\u2014to create workflows that respond to events, run on schedules, or execute on demand. n8n is open-source and fully self-hostable, giving teams full control over data, system behavior, and deployment. It features hundreds of integrations, strong community support, and the ability to extend the platform however you need. At its core, n8n enables you to connect nodes to build workflows.",
+      "score": 0.8945781,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.codecademy.com/article/build-ai-workflows-with-n8n",
+      "title": "What is n8n: Build AI Workflows with n8n - Codecademy",
+      "content": "# What is n8n: Build AI Workflows with n8n. This guide discusses how to create AI workflows in n8n. Let\u2019s start with the basics of n8n and n8n workflow. N8n is a workflow automation tool that lets us create multi-step AI agents and automate workflows using visual tools. It is a no-code open-source tool that we can use in self-hosted and in-cloud setups on any operating system using Node.js or Docker. ## What is an n8n workflow? For example, we want to create an automated workflow that analyzes reviews posted by the learners on the Codecademy website and sends the review summary to a Slack channel. We need Node.js and npm to install and run n8n on our machine. To download Node.js on macOS, you can execute the following command in the command-line terminal, which will install Node.js and npm together on your machine:.",
+      "score": 0.8893851,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.linkedin.com/pulse/what-n8n-beginners-guide-workflow-automation-tool-sandaruwan-upfic",
+      "title": "What is n8n? A Beginner's Guide to the Workflow Automation Tool",
+      "content": "n8n stands for \"node-based no-code.\" It's an open-source workflow automation tool that allows you to connect different apps and services with",
+      "score": 0.8891543,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/automation/comments/1lv695o/can_someone_explain_n8n_to_me_like_im_mentally",
+      "title": "Can someone explain n8n to me like I'm mentally disabled - Reddit",
+      "content": "N8N is just a workflow automation tool, with \"ai agent\" capabilities included. N8N is also free if you self-host it. Economy-Brain-9077.",
+      "score": 0.8512743,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n",
+      "title": "A Beginner's Guide to Automation with n8n - freeCodeCamp",
+      "content": "# A Beginner\u2019s Guide to Automation with n8n. Whether it\u2019s moving data between apps, triggering actions when something changes, or building smart systems that run on their own, automation can save hours every week. The problem is that most automation platforms make you choose between flexibility and simplicity. Writing your own scripts in Python or JavaScript gives you full control but takes more time to build and maintain. It is an open-source workflow automation platform that provides both control and simplicity. You can drag and connect nodes to create workflows or write code when needed. In this article, we\u2019ll learn how to build and deploy your own automation workflows using n8n. By the end, you\u2019ll have a working automation server and the knowledge to create smart, self-running workflows for any use case. This large library of ready-to-use nodes means you can connect most tools you use every day without needing to write any code at all.",
+      "score": 0.8467682,
+      "raw_content": null
+    }
+  ],
+  "planner_tasks": [],
+  "workflow_steps": {
+    "router": "completed",
+    "query_rewrite_node": "completed",
+    "planner_node": "skipped",
+    "search_node": "completed",
+    "extract_node": "completed",
+    "formatter_node": "completed",
+    "answer_node": "completed",
+    "evidence_node": "skipped",
+    "synthesis_context": "skipped",
+    "gap_analysis_node": "skipped",
+    "simple": "completed"
+  },
+  "history": [
+    {
+      "query": "what is n8n",
+      "mode": "SIMPLE",
+      "date": "Jul 02, 20:18",
+      "final_answer": "### What is n8n?\n\nn8n (pronounced \u201cn-eight-n\u201d) is a low-code, open-source workflow automation platform built with Node.js [1, 2]. It is designed to allow users to orchestrate logic, connect various services, and scale pipelines with minimal boilerplate [1]. \n\nThe tool is characterized by its flexibility, offering a balance between the simplicity of no-code visual interfaces and the power of custom coding [3]. It can be self-hosted on a user's own server\u2014which is particularly beneficial for industries requiring high data privacy\u2014or used via cloud-hosted setups [2, 3, 4].\n\n### How n8n Works\n\nn8n operates on a node-based architecture, where workflows are constructed visually in a browser-based interface [4]. \n\n#### Workflow Structure\nAn n8n workflow is an automated sequence of tasks consisting of multiple nodes [2]. These nodes represent individual steps or actions, such as sending an email, scraping a website, transforming data, or connecting to an API [4]. A typical workflow includes:\n\n*   **Trigger Nodes:** These initiate the workflow based on specific events, such as a webhook or a time-based trigger [2, 4].\n*   **Action Nodes:** These perform specific tasks, such as querying databases, sending messages, or calling APIs [4].\n*   **Logic Nodes:** These are used to control the path of the workflow by adding conditions, loops, or custom code [4].\n\n#### Customization and Integration\nWhile n8n is a visual, no-code tool, it is also developer-friendly [2, 3]. Users can:\n*   **Integrate Services:** It supports over 400 integrations out of the box, including tools like Slack, Google Sheets, GitHub, AWS, and OpenAI [3, 4].\n*   **Add Custom Logic:** Users can incorporate JavaScript or Python functions directly into their workflows [2, 3].\n*   **Extend Functionality:** It allows for the import of libraries from the Node package manager (npm) or Python, and users can connect to any API even if a prebuilt node does not exist [2, 3].\n\n### Use Cases\nn8n is used to automate a wide range of tasks, including:\n*   **AI-Driven Automations:** Extracting data, processing it, sending it to an LLM, and presenting the results [1].\n*   **Marketing:** Capturing form responses and automating email follow-ups [4].\n*   **Finance:** Updating financial spreadsheets with daily exchange rates [4].\n*   **E-commerce:** Synchronizing inventory across platforms following a sale [4].\n*   **Development:** Monitoring GitHub commits to trigger CI/CD pipelines [4].\n\n### Sources\n[1] https://workos.com/blog/n8n-the-workflow-automation-tool-for-the-ai-age\n[2] https://www.codecademy.com/article/build-ai-workflows-with-n8n\n[3] https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n\n[4] https://www.linkedin.com/pulse/what-n8n-beginners-guide-workflow-automation-tool-sandaruwan-upfic",
+      "verified_report": null,
+      "claims": [],
+      "stats": {
+        "sources": 5,
+        "pages": 4,
+        "time": 38.614380836486816,
+        "citations": 16,
+        "mode": "SIMPLE"
+      },
+      "timeline": [
+        [
+          "20:18:16",
+          "Classifying query route..."
+        ],
+        [
+          "20:18:16",
+          "Classifying query route..."
+        ],
+        [
+          "20:18:18",
+          "Classifying query route..."
+        ],
+        [
+          "20:18:19",
+          "Classifying query route..."
+        ],
+        [
+          "20:18:19",
+          "Route selected: **SIMPLE**"
+        ],
+        [
+          "20:18:19",
+          "Rewriting search query..."
+        ],
+        [
+          "20:18:19",
+          "Rewriting search query..."
+        ],
+        [
+          "20:18:26",
+          "Rewriting search query..."
+        ],
+        [
+          "20:18:26",
+          "Search terms optimized successfully."
+        ],
+        [
+          "20:18:26",
+          "Querying Tavily Web Index..."
+        ],
+        [
+          "20:18:29",
+          "Retrieved 5 search sources."
+        ],
+        [
+          "20:18:29",
+          "Scraping and extracting full webpage contents..."
+        ],
+        [
+          "20:18:32",
+          "Extracted content from 4 target domains."
+        ],
+        [
+          "20:18:32",
+          "Formatting references for answer builder..."
+        ],
+        [
+          "20:18:32",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:18:32",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:18:48",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:18:48",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:18:52",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "20:18:52",
+          "Report synthesis complete."
+        ]
+      ],
+      "search_results": [
+        {
+          "url": "https://workos.com/blog/n8n-the-workflow-automation-tool-for-the-ai-age",
+          "title": "n8n: The workflow automation tool for the AI age - WorkOS",
+          "content": "# n8n: The workflow automation tool for the AI age. That\u2019s why tools like n8n are gaining momentum:\u00a0As a self-hostable, open-source automation platform, n8n lets you orchestrate logic, connect services, and scale pipelines with minimal boilerplate. In the LLM-enhanced era, engineers repeatedly build the same types of pipelines: extract data from one or more sources, process it, send it to an LLM, and present the results in a clean, usable interface. As a self-hostable, open-source automation platform, n8n lets you orchestrate logic, connect services, and scale pipelines with minimal boilerplate. It offers a visual interface where you connect nodes\u2014each representing a step in a process\u2014to create workflows that respond to events, run on schedules, or execute on demand. n8n is open-source and fully self-hostable, giving teams full control over data, system behavior, and deployment. It features hundreds of integrations, strong community support, and the ability to extend the platform however you need. At its core, n8n enables you to connect nodes to build workflows.",
+          "score": 0.8945781,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.codecademy.com/article/build-ai-workflows-with-n8n",
+          "title": "What is n8n: Build AI Workflows with n8n - Codecademy",
+          "content": "# What is n8n: Build AI Workflows with n8n. This guide discusses how to create AI workflows in n8n. Let\u2019s start with the basics of n8n and n8n workflow. N8n is a workflow automation tool that lets us create multi-step AI agents and automate workflows using visual tools. It is a no-code open-source tool that we can use in self-hosted and in-cloud setups on any operating system using Node.js or Docker. ## What is an n8n workflow? For example, we want to create an automated workflow that analyzes reviews posted by the learners on the Codecademy website and sends the review summary to a Slack channel. We need Node.js and npm to install and run n8n on our machine. To download Node.js on macOS, you can execute the following command in the command-line terminal, which will install Node.js and npm together on your machine:.",
+          "score": 0.8893851,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.linkedin.com/pulse/what-n8n-beginners-guide-workflow-automation-tool-sandaruwan-upfic",
+          "title": "What is n8n? A Beginner's Guide to the Workflow Automation Tool",
+          "content": "n8n stands for \"node-based no-code.\" It's an open-source workflow automation tool that allows you to connect different apps and services with",
+          "score": 0.8891543,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.reddit.com/r/automation/comments/1lv695o/can_someone_explain_n8n_to_me_like_im_mentally",
+          "title": "Can someone explain n8n to me like I'm mentally disabled - Reddit",
+          "content": "N8N is just a workflow automation tool, with \"ai agent\" capabilities included. N8N is also free if you self-host it. Economy-Brain-9077.",
+          "score": 0.8512743,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n",
+          "title": "A Beginner's Guide to Automation with n8n - freeCodeCamp",
+          "content": "# A Beginner\u2019s Guide to Automation with n8n. Whether it\u2019s moving data between apps, triggering actions when something changes, or building smart systems that run on their own, automation can save hours every week. The problem is that most automation platforms make you choose between flexibility and simplicity. Writing your own scripts in Python or JavaScript gives you full control but takes more time to build and maintain. It is an open-source workflow automation platform that provides both control and simplicity. You can drag and connect nodes to create workflows or write code when needed. In this article, we\u2019ll learn how to build and deploy your own automation workflows using n8n. By the end, you\u2019ll have a working automation server and the knowledge to create smart, self-running workflows for any use case. This large library of ready-to-use nodes means you can connect most tools you use every day without needing to write any code at all.",
+          "score": 0.8467682,
+          "raw_content": null
+        }
+      ],
+      "planner_tasks": [],
+      "workflow_steps": {
+        "router": "completed",
+        "query_rewrite_node": "completed",
+        "planner_node": "skipped",
+        "search_node": "completed",
+        "extract_node": "completed",
+        "formatter_node": "completed",
+        "answer_node": "completed",
+        "evidence_node": "skipped",
+        "synthesis_context": "skipped",
+        "gap_analysis_node": "skipped",
+        "simple": "completed"
+      }
+    }
+  ]
+}

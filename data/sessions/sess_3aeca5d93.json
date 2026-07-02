@@ -1,0 +1,594 @@
+{
+  "query": "what is mcp",
+  "rewritten_query": "what is Model Context Protocol MCP",
+  "route_decision": "simple",
+  "final_answer": "# Model Context Protocol (MCP)\n\nThe Model Context Protocol (MCP) is an open-source standard designed to bridge AI models with external data sources, tools, and services [2, 4, 5]. It provides a universal, standardized way for AI applications to interact with external systems, effectively acting as a \"USB-C port for AI\" [2, 3, 5].\n\n### Core Purpose and Functionality\nMCP addresses the challenge of \"information silos\" where AI models are isolated from the data they need to provide relevant responses [4]. Instead of requiring developers to build and maintain custom, ad-hoc integrations for every API or database, MCP offers a single, consistent protocol [2, 3, 4].\n\n*   **Standardized Language:** Built on JSON-RPC 2.0, MCP allows AI assistants to invoke functions, retrieve data, and use predefined prompts in a structured, secure manner [2].\n*   **Universal Adapter:** It functions as a universal adapter, enabling AI applications to connect to various systems\u2014such as databases, content repositories, and business tools\u2014without needing custom code for each specific integration [2, 4, 5].\n*   **Two-Way Communication:** MCP supports persistent, real-time, two-way communication, allowing AI models to both retrieve information and trigger actions dynamically [3, 4].\n\n### Architecture\nMCP utilizes a client-server architecture to facilitate these connections [2, 4]:\n\n*   **MCP Hosts:** These are the AI-powered applications (e.g., IDE assistants, chatbots, or agents) that require access to external tools or data [2, 3].\n*   **MCP Clients:** These components run within the host application and maintain dedicated, one-to-one connections with MCP servers [2, 3].\n*   **MCP Servers:** These are lightweight programs that expose specific capabilities\u2014such as functions, data resources, or prompt templates\u2014to the client [2, 3, 5].\n\n### Benefits\n*   **Rapid Tool Integration:** Developers can plug in new capabilities without writing custom code from scratch. If an MCP server exists for a service (e.g., Google Drive, Slack, or a SQL database), any MCP-compatible AI application can connect to it immediately [2, 3, 4].\n*   **Dynamic Discovery:** AI models can dynamically discover and interact with available tools without requiring hard-coded knowledge of each specific integration [3].\n*   **Reduced Complexity:** By replacing fragmented, one-off integrations with a single protocol, MCP simplifies maintenance, authentication, and error handling [3, 4].\n\n### Use Cases\n*   **Customer Support:** AI assistants can pull customer history, check order statuses, and suggest resolutions by connecting to CRM and ticketing systems via MCP [3].\n*   **Finance:** AI-powered personal finance managers can aggregate transactions and track investments by connecting to multiple financial services through a unified MCP layer [3].\n*   **Software Development:** Coding assistants can analyze, refactor, and secure code by interacting with various development tools (e.g., static analysis, security scanning, and performance profiling) through a single MCP interface [3].\n\n### Sources\n[1] https://www.databricks.com/blog/what-is-model-context-protocol  \n[2] https://stytch.com/blog/model-context-protocol-introduction  \n[3] https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained  \n[4] https://www.anthropic.com/news/model-context-protocol  \n[5] https://modelcontextprotocol.io/docs/getting-started/intro",
+  "verified_report": null,
+  "claims": [],
+  "stats": {
+    "sources": 5,
+    "pages": 5,
+    "time": 28.923042058944702,
+    "citations": 11,
+    "mode": "SIMPLE"
+  },
+  "timeline": [
+    [
+      "19:54:27",
+      "Classifying query route..."
+    ],
+    [
+      "19:54:27",
+      "Classifying query route..."
+    ],
+    [
+      "19:54:28",
+      "Classifying query route..."
+    ],
+    [
+      "19:54:28",
+      "Classifying query route..."
+    ],
+    [
+      "19:54:28",
+      "Route selected: **SIMPLE**"
+    ],
+    [
+      "19:54:28",
+      "Rewriting search query..."
+    ],
+    [
+      "19:54:28",
+      "Rewriting search query..."
+    ],
+    [
+      "19:54:30",
+      "Rewriting search query..."
+    ],
+    [
+      "19:54:30",
+      "Search terms optimized successfully."
+    ],
+    [
+      "19:54:30",
+      "Querying Tavily Web Index..."
+    ],
+    [
+      "19:54:30",
+      "Retrieved 5 search sources."
+    ],
+    [
+      "19:54:30",
+      "Scraping and extracting full webpage contents..."
+    ],
+    [
+      "19:54:33",
+      "Extracted content from 5 target domains."
+    ],
+    [
+      "19:54:33",
+      "Formatting references for answer builder..."
+    ],
+    [
+      "19:54:33",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:54:33",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:54:46",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:54:46",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:54:56",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:54:56",
+      "Report synthesis complete."
+    ]
+  ],
+  "search_results": [
+    {
+      "url": "https://www.databricks.com/blog/what-is-model-context-protocol",
+      "title": "What is the Model Context Protocol (MCP)? | Databricks",
+      "content": "* The Model Context Protocol (MCP) is an open standard that lets AI assistants securely connect to tools, data sources and services through a consistent interface. The Model Context Protocol (MCP) is an open standard that enables AI applications to connect seamlessly with external data sources, tools, and systems. Think of the Model Context Protocol as a USB-C port for AI systems\u2014just as a USB-C port standardizes how devices connect to computers, MCP standardizes how AI agents access external resources like databases, APIs, file systems, and knowledge bases. The Model Context Protocol MCP serves as a standardized way for AI applications to discover and interact with external tools and data sources at runtime. The context protocol enables developers to build [AI agents](https://www.databricks.com/glossary/ai-agents) that can perform tasks using live data from popular enterprise systems, development environments, and other external sources\u2014all through a single, standardized protocol. Through its bidirectional communication between MCP clients and MCP servers, and support for agentic AI workflows, the Model Context Protocol MCP establishes the foundation for more capable, autonomous AI tools across diverse environments.",
+      "score": 0.94536424,
+      "raw_content": null
+    },
+    {
+      "url": "https://stytch.com/blog/model-context-protocol-introduction",
+      "title": "Model Context Protocol (MCP): A comprehensive introduction for ...",
+      "content": "**Model Context Protocol (MCP)** is an open standard that bridges AI models with external data and services, allowing Large Language Models (LLMs) to make structured API calls in a consistent, secure way. This post will introduce MCP, explain why it\u2019s valuable for connecting AI systems, compare it to existing approaches like ChatGPT plugins and manual API integrations, and dive into its recent support for OAuth-based authentication. MCP acts as a universal adapter between AI tools and external services, eliminating the need for custom integration code for each tool or API. MCP is essentially a **universal adapter** between AI applications and external tools or data sources. It defines a common protocol (built on JSON-RPC 2.0) that lets an AI assistant invoke functions, fetch data, or use predefined prompts from external services in a structured manner. The MCP layer enables AI applications to securely access and interact with external data sources and tools.",
+      "score": 0.9438932,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained",
+      "title": "Model Context Protocol (MCP) Clearly Explained : r/LLMDevs - Reddit",
+      "content": "# Model Context Protocol (MCP) Clearly Explained : r/LLMDevs. # Model Context Protocol (MCP) Clearly Explained. # What is MCP? The Model Context Protocol (MCP) is a standardized protocol that connects AI agents to various external tools and data sources. _**Imagine it as a USB-C port \u2014 but for AI applications.**_. ## Why use MCP instead of traditional APIs? Connecting an AI system to external tools involves integrating multiple APIs. Each API integration means separate code, documentation, authentication methods, error handling, and maintenance. *   **Single protocol:** MCP acts as a standardized \"connector,\" so integrating one MCP means potential access to multiple tools and services, not just one. ## When to use MCP? Probably, but, the point of what this person is talking about is \"well, it'll have access to everything, because you don't know what it needs ahead of time\" and that just, breaks API security, that's not how we do security.",
+      "score": 0.9242583,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/model-context-protocol",
+      "title": "Introducing the Model Context Protocol - Anthropic",
+      "content": "[Skip to main content](https://www.anthropic.com/news/model-context-protocol#main-content)[Skip to footer](https://www.anthropic.com/news/model-context-protocol#footer). *   [Policy](https://www.anthropic.com/policy). Today, we're open-sourcing the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. [Read more](https://www.anthropic.com/news/claude-sonnet-5). [Read more](https://www.anthropic.com/news/redeploying-fable-5). [Read more](https://www.anthropic.com/news/claude-science-ai-workbench). *   [Claude](https://claude.com/product/overview). *   [Claude Code](https://claude.com/product/claude-code). *   [Claude Cowork](https://claude.com/product/cowork). *   [@Claude](https://claude.com/product/tag). *   [Claude Design](https://claude.com/product/design). *   [Claude Security](https://claude.com/product/claude-security). *   [Skills](https://www.claude.com/skills). *   [Pricing](https://claude.com/pricing). *   [Mythos](https://www.anthropic.com/claude/mythos). *   [Fable](https://www.anthropic.com/claude/fable). *   [Opus](https://www.anthropic.com/claude/opus). *   [Sonnet](https://www.anthropic.com/claude/sonnet). *   [Haiku](https://www.anthropic.com/claude/haiku). *   [AI agents](https://claude.com/solutions/agents). *   [Code modernization](https://claude.com/solutions/code-modernization). *   [Coding](https://claude.com/solutions/coding). *   [Customer support](https://claude.com/solutions/customer-support). *   [Education](https://claude.com/solutions/education). *   [Enterprise](https://claude.com/solutions/enterprise). *   [Government](https://claude.com/solutions/government). *   [Healthcare](https://claude.com/solutions/healthcare). *   [Legal](https://claude.com/solutions/legal). *   [Nonprofits](https://claude.com/solutions/nonprofits). *   [Security](https://claude.com/solutions/security). *   [Overview](https://claude.com/platform/api). *   [Developer docs](https://platform.claude.com/docs). *   [Ecosystem](https://claude.com/ecosystem). *   [Marketplace](https://claude.com/platform/marketplace). *   [Google Cloud](https://claude.com/partners/google-cloud-vertex-ai). *   [Console login](https://platform.claude.com/). *   [Blog](https://claude.com/blog). *   [Community](https://claude.com/community). *   [Connectors](https://claude.com/connectors). *   [Customer stories](https://claude.com/customers). *   [Inside Claude Code](https://www.anthropic.com/product/claude-code). *   [Inside Claude Cowork](https://www.anthropic.com/product/claude-cowork). *   [Inside Claude Enterprise](https://www.anthropic.com/product/enterprise). *   [Plugins](https://claude.com/plugins). *   [Service partners](https://claude.com/partners/services). *   [Tutorials](https://claude.com/resources/tutorials). *   [Startups](https://claude.com/programs/startups). *   [Anthropic](https://www.anthropic.com/company). *   [Policy](https://www.anthropic.com/policy). *   [Claude\u2019s Constitution](https://www.anthropic.com/constitution). *   [Claude Corps](https://www.anthropic.com/claude-corps). *   [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential). *   [](https://www.youtube.com/@anthropic-ai).",
+      "score": 0.8539252,
+      "raw_content": null
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+      "title": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
+      "content": "[Skip to main content](https://modelcontextprotocol.io/docs/getting-started/intro#content-area). [Model Context Protocol home page![Image 1: light logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/light.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=a5ac61ce77858fb1ddaf6de761c39499)![Image 2: dark logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/dark.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=1227cb7feb8344f9f6288c6b5b0a6d80)](https://modelcontextprotocol.io/). *   [What is MCP?](https://modelcontextprotocol.io/docs/getting-started/intro). *   [Architecture](https://modelcontextprotocol.io/docs/learn/architecture). *   [Servers](https://modelcontextprotocol.io/docs/learn/server-concepts). *   [Clients](https://modelcontextprotocol.io/docs/learn/client-concepts). *   [Versioning](https://modelcontextprotocol.io/docs/learn/versioning). *   [Connect to local MCP servers](https://modelcontextprotocol.io/docs/develop/connect-local-servers). *   [Connect to remote MCP Servers](https://modelcontextprotocol.io/docs/develop/connect-remote-servers). *   [Build with Agent Skills](https://modelcontextprotocol.io/docs/develop/build-with-agent-skills). *   [Build an MCP server](https://modelcontextprotocol.io/docs/develop/build-server). *   [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector). *   [Debugging](https://modelcontextprotocol.io/docs/tools/debugging). *   [What can MCP enable?](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). *   [Why does MCP matter?](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). *   [Broad ecosystem support](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). *   [Start Building](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). *   [Learn more](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). AI assistants like [Claude](https://claude.com/docs/connectors/building) and [ChatGPT](https://developers.openai.com/api/docs/mcp/), development tools like [Visual Studio Code](https://code.visualstudio.com/docs/copilot/chat/mcp-servers), [Cursor](https://cursor.com/docs/context/mcp), [MCPJam](https://docs.mcpjam.com/getting-started), and many others all support MCP \u2014 making it easy to build once and integrate everywhere. ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). ## [Build servers Create MCP servers to expose your data and tools](https://modelcontextprotocol.io/docs/develop/build-server). ## [Build clients Develop applications that connect to MCP servers](https://modelcontextprotocol.io/docs/develop/build-client). ## [Build MCP Apps Build interactive apps that run inside AI clients](https://modelcontextprotocol.io/extensions/apps/overview). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [Understand concepts Learn the core concepts and architecture of MCP](https://modelcontextprotocol.io/docs/learn/architecture). [Architecture](https://modelcontextprotocol.io/docs/learn/architecture).",
+      "score": 0.82994765,
+      "raw_content": null
+    }
+  ],
+  "planner_tasks": [],
+  "workflow_steps": {
+    "router": "completed",
+    "query_rewrite_node": "completed",
+    "planner_node": "skipped",
+    "search_node": "completed",
+    "extract_node": "completed",
+    "formatter_node": "completed",
+    "answer_node": "completed",
+    "evidence_node": "skipped",
+    "synthesis_context": "skipped",
+    "gap_analysis_node": "skipped",
+    "simple": "completed"
+  },
+  "history": [
+    {
+      "query": "what is mcp",
+      "mode": "SIMPLE",
+      "date": "Jul 02, 19:54",
+      "final_answer": "# Model Context Protocol (MCP)\n\nThe Model Context Protocol (MCP) is an open-source standard designed to bridge AI models with external data sources, tools, and services [2, 4, 5]. It provides a universal, standardized way for AI applications to interact with external systems, effectively acting as a \"USB-C port for AI\" [2, 3, 5].\n\n### Core Purpose and Functionality\nMCP addresses the challenge of \"information silos\" where AI models are isolated from the data they need to provide relevant responses [4]. Instead of requiring developers to build and maintain custom, ad-hoc integrations for every API or database, MCP offers a single, consistent protocol [2, 3, 4].\n\n*   **Standardized Language:** Built on JSON-RPC 2.0, MCP allows AI assistants to invoke functions, retrieve data, and use predefined prompts in a structured, secure manner [2].\n*   **Universal Adapter:** It functions as a universal adapter, enabling AI applications to connect to various systems\u2014such as databases, content repositories, and business tools\u2014without needing custom code for each specific integration [2, 4, 5].\n*   **Two-Way Communication:** MCP supports persistent, real-time, two-way communication, allowing AI models to both retrieve information and trigger actions dynamically [3, 4].\n\n### Architecture\nMCP utilizes a client-server architecture to facilitate these connections [2, 4]:\n\n*   **MCP Hosts:** These are the AI-powered applications (e.g., IDE assistants, chatbots, or agents) that require access to external tools or data [2, 3].\n*   **MCP Clients:** These components run within the host application and maintain dedicated, one-to-one connections with MCP servers [2, 3].\n*   **MCP Servers:** These are lightweight programs that expose specific capabilities\u2014such as functions, data resources, or prompt templates\u2014to the client [2, 3, 5].\n\n### Benefits\n*   **Rapid Tool Integration:** Developers can plug in new capabilities without writing custom code from scratch. If an MCP server exists for a service (e.g., Google Drive, Slack, or a SQL database), any MCP-compatible AI application can connect to it immediately [2, 3, 4].\n*   **Dynamic Discovery:** AI models can dynamically discover and interact with available tools without requiring hard-coded knowledge of each specific integration [3].\n*   **Reduced Complexity:** By replacing fragmented, one-off integrations with a single protocol, MCP simplifies maintenance, authentication, and error handling [3, 4].\n\n### Use Cases\n*   **Customer Support:** AI assistants can pull customer history, check order statuses, and suggest resolutions by connecting to CRM and ticketing systems via MCP [3].\n*   **Finance:** AI-powered personal finance managers can aggregate transactions and track investments by connecting to multiple financial services through a unified MCP layer [3].\n*   **Software Development:** Coding assistants can analyze, refactor, and secure code by interacting with various development tools (e.g., static analysis, security scanning, and performance profiling) through a single MCP interface [3].\n\n### Sources\n[1] https://www.databricks.com/blog/what-is-model-context-protocol  \n[2] https://stytch.com/blog/model-context-protocol-introduction  \n[3] https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained  \n[4] https://www.anthropic.com/news/model-context-protocol  \n[5] https://modelcontextprotocol.io/docs/getting-started/intro",
+      "verified_report": null,
+      "claims": [],
+      "stats": {
+        "sources": 5,
+        "pages": 5,
+        "time": 28.923042058944702,
+        "citations": 11,
+        "mode": "SIMPLE"
+      },
+      "timeline": [
+        [
+          "19:54:27",
+          "Classifying query route..."
+        ],
+        [
+          "19:54:27",
+          "Classifying query route..."
+        ],
+        [
+          "19:54:28",
+          "Classifying query route..."
+        ],
+        [
+          "19:54:28",
+          "Classifying query route..."
+        ],
+        [
+          "19:54:28",
+          "Route selected: **SIMPLE**"
+        ],
+        [
+          "19:54:28",
+          "Rewriting search query..."
+        ],
+        [
+          "19:54:28",
+          "Rewriting search query..."
+        ],
+        [
+          "19:54:30",
+          "Rewriting search query..."
+        ],
+        [
+          "19:54:30",
+          "Search terms optimized successfully."
+        ],
+        [
+          "19:54:30",
+          "Querying Tavily Web Index..."
+        ],
+        [
+          "19:54:30",
+          "Retrieved 5 search sources."
+        ],
+        [
+          "19:54:30",
+          "Scraping and extracting full webpage contents..."
+        ],
+        [
+          "19:54:33",
+          "Extracted content from 5 target domains."
+        ],
+        [
+          "19:54:33",
+          "Formatting references for answer builder..."
+        ],
+        [
+          "19:54:33",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:54:33",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:54:46",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:54:46",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:54:56",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:54:56",
+          "Report synthesis complete."
+        ]
+      ],
+      "search_results": [
+        {
+          "url": "https://www.databricks.com/blog/what-is-model-context-protocol",
+          "title": "What is the Model Context Protocol (MCP)? | Databricks",
+          "content": "* The Model Context Protocol (MCP) is an open standard that lets AI assistants securely connect to tools, data sources and services through a consistent interface. The Model Context Protocol (MCP) is an open standard that enables AI applications to connect seamlessly with external data sources, tools, and systems. Think of the Model Context Protocol as a USB-C port for AI systems\u2014just as a USB-C port standardizes how devices connect to computers, MCP standardizes how AI agents access external resources like databases, APIs, file systems, and knowledge bases. The Model Context Protocol MCP serves as a standardized way for AI applications to discover and interact with external tools and data sources at runtime. The context protocol enables developers to build [AI agents](https://www.databricks.com/glossary/ai-agents) that can perform tasks using live data from popular enterprise systems, development environments, and other external sources\u2014all through a single, standardized protocol. Through its bidirectional communication between MCP clients and MCP servers, and support for agentic AI workflows, the Model Context Protocol MCP establishes the foundation for more capable, autonomous AI tools across diverse environments.",
+          "score": 0.94536424,
+          "raw_content": null
+        },
+        {
+          "url": "https://stytch.com/blog/model-context-protocol-introduction",
+          "title": "Model Context Protocol (MCP): A comprehensive introduction for ...",
+          "content": "**Model Context Protocol (MCP)** is an open standard that bridges AI models with external data and services, allowing Large Language Models (LLMs) to make structured API calls in a consistent, secure way. This post will introduce MCP, explain why it\u2019s valuable for connecting AI systems, compare it to existing approaches like ChatGPT plugins and manual API integrations, and dive into its recent support for OAuth-based authentication. MCP acts as a universal adapter between AI tools and external services, eliminating the need for custom integration code for each tool or API. MCP is essentially a **universal adapter** between AI applications and external tools or data sources. It defines a common protocol (built on JSON-RPC 2.0) that lets an AI assistant invoke functions, fetch data, or use predefined prompts from external services in a structured manner. The MCP layer enables AI applications to securely access and interact with external data sources and tools.",
+          "score": 0.9438932,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained",
+          "title": "Model Context Protocol (MCP) Clearly Explained : r/LLMDevs - Reddit",
+          "content": "# Model Context Protocol (MCP) Clearly Explained : r/LLMDevs. # Model Context Protocol (MCP) Clearly Explained. # What is MCP? The Model Context Protocol (MCP) is a standardized protocol that connects AI agents to various external tools and data sources. _**Imagine it as a USB-C port \u2014 but for AI applications.**_. ## Why use MCP instead of traditional APIs? Connecting an AI system to external tools involves integrating multiple APIs. Each API integration means separate code, documentation, authentication methods, error handling, and maintenance. *   **Single protocol:** MCP acts as a standardized \"connector,\" so integrating one MCP means potential access to multiple tools and services, not just one. ## When to use MCP? Probably, but, the point of what this person is talking about is \"well, it'll have access to everything, because you don't know what it needs ahead of time\" and that just, breaks API security, that's not how we do security.",
+          "score": 0.9242583,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.anthropic.com/news/model-context-protocol",
+          "title": "Introducing the Model Context Protocol - Anthropic",
+          "content": "[Skip to main content](https://www.anthropic.com/news/model-context-protocol#main-content)[Skip to footer](https://www.anthropic.com/news/model-context-protocol#footer). *   [Policy](https://www.anthropic.com/policy). Today, we're open-sourcing the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. [Read more](https://www.anthropic.com/news/claude-sonnet-5). [Read more](https://www.anthropic.com/news/redeploying-fable-5). [Read more](https://www.anthropic.com/news/claude-science-ai-workbench). *   [Claude](https://claude.com/product/overview). *   [Claude Code](https://claude.com/product/claude-code). *   [Claude Cowork](https://claude.com/product/cowork). *   [@Claude](https://claude.com/product/tag). *   [Claude Design](https://claude.com/product/design). *   [Claude Security](https://claude.com/product/claude-security). *   [Skills](https://www.claude.com/skills). *   [Pricing](https://claude.com/pricing). *   [Mythos](https://www.anthropic.com/claude/mythos). *   [Fable](https://www.anthropic.com/claude/fable). *   [Opus](https://www.anthropic.com/claude/opus). *   [Sonnet](https://www.anthropic.com/claude/sonnet). *   [Haiku](https://www.anthropic.com/claude/haiku). *   [AI agents](https://claude.com/solutions/agents). *   [Code modernization](https://claude.com/solutions/code-modernization). *   [Coding](https://claude.com/solutions/coding). *   [Customer support](https://claude.com/solutions/customer-support). *   [Education](https://claude.com/solutions/education). *   [Enterprise](https://claude.com/solutions/enterprise). *   [Government](https://claude.com/solutions/government). *   [Healthcare](https://claude.com/solutions/healthcare). *   [Legal](https://claude.com/solutions/legal). *   [Nonprofits](https://claude.com/solutions/nonprofits). *   [Security](https://claude.com/solutions/security). *   [Overview](https://claude.com/platform/api). *   [Developer docs](https://platform.claude.com/docs). *   [Ecosystem](https://claude.com/ecosystem). *   [Marketplace](https://claude.com/platform/marketplace). *   [Google Cloud](https://claude.com/partners/google-cloud-vertex-ai). *   [Console login](https://platform.claude.com/). *   [Blog](https://claude.com/blog). *   [Community](https://claude.com/community). *   [Connectors](https://claude.com/connectors). *   [Customer stories](https://claude.com/customers). *   [Inside Claude Code](https://www.anthropic.com/product/claude-code). *   [Inside Claude Cowork](https://www.anthropic.com/product/claude-cowork). *   [Inside Claude Enterprise](https://www.anthropic.com/product/enterprise). *   [Plugins](https://claude.com/plugins). *   [Service partners](https://claude.com/partners/services). *   [Tutorials](https://claude.com/resources/tutorials). *   [Startups](https://claude.com/programs/startups). *   [Anthropic](https://www.anthropic.com/company). *   [Policy](https://www.anthropic.com/policy). *   [Claude\u2019s Constitution](https://www.anthropic.com/constitution). *   [Claude Corps](https://www.anthropic.com/claude-corps). *   [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential). *   [](https://www.youtube.com/@anthropic-ai).",
+          "score": 0.8539252,
+          "raw_content": null
+        },
+        {
+          "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+          "title": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
+          "content": "[Skip to main content](https://modelcontextprotocol.io/docs/getting-started/intro#content-area). [Model Context Protocol home page![Image 1: light logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/light.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=a5ac61ce77858fb1ddaf6de761c39499)![Image 2: dark logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/dark.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=1227cb7feb8344f9f6288c6b5b0a6d80)](https://modelcontextprotocol.io/). *   [What is MCP?](https://modelcontextprotocol.io/docs/getting-started/intro). *   [Architecture](https://modelcontextprotocol.io/docs/learn/architecture). *   [Servers](https://modelcontextprotocol.io/docs/learn/server-concepts). *   [Clients](https://modelcontextprotocol.io/docs/learn/client-concepts). *   [Versioning](https://modelcontextprotocol.io/docs/learn/versioning). *   [Connect to local MCP servers](https://modelcontextprotocol.io/docs/develop/connect-local-servers). *   [Connect to remote MCP Servers](https://modelcontextprotocol.io/docs/develop/connect-remote-servers). *   [Build with Agent Skills](https://modelcontextprotocol.io/docs/develop/build-with-agent-skills). *   [Build an MCP server](https://modelcontextprotocol.io/docs/develop/build-server). *   [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector). *   [Debugging](https://modelcontextprotocol.io/docs/tools/debugging). *   [What can MCP enable?](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). *   [Why does MCP matter?](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). *   [Broad ecosystem support](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). *   [Start Building](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). *   [Learn more](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). AI assistants like [Claude](https://claude.com/docs/connectors/building) and [ChatGPT](https://developers.openai.com/api/docs/mcp/), development tools like [Visual Studio Code](https://code.visualstudio.com/docs/copilot/chat/mcp-servers), [Cursor](https://cursor.com/docs/context/mcp), [MCPJam](https://docs.mcpjam.com/getting-started), and many others all support MCP \u2014 making it easy to build once and integrate everywhere. ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). ## [Build servers Create MCP servers to expose your data and tools](https://modelcontextprotocol.io/docs/develop/build-server). ## [Build clients Develop applications that connect to MCP servers](https://modelcontextprotocol.io/docs/develop/build-client). ## [Build MCP Apps Build interactive apps that run inside AI clients](https://modelcontextprotocol.io/extensions/apps/overview). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [Understand concepts Learn the core concepts and architecture of MCP](https://modelcontextprotocol.io/docs/learn/architecture). [Architecture](https://modelcontextprotocol.io/docs/learn/architecture).",
+          "score": 0.82994765,
+          "raw_content": null
+        }
+      ],
+      "planner_tasks": [],
+      "workflow_steps": {
+        "router": "completed",
+        "query_rewrite_node": "completed",
+        "planner_node": "skipped",
+        "search_node": "completed",
+        "extract_node": "completed",
+        "formatter_node": "completed",
+        "answer_node": "completed",
+        "evidence_node": "skipped",
+        "synthesis_context": "skipped",
+        "gap_analysis_node": "skipped",
+        "simple": "completed"
+      }
+    },
+    {
+      "query": "what is rag",
+      "mode": "SIMPLE",
+      "date": "Jul 02, 19:52",
+      "final_answer": "# Retrieval-Augmented Generation (RAG)\n\nRetrieval-Augmented Generation (RAG) is an AI architecture designed to optimize the performance of large language models (LLMs) by connecting them to external, authoritative knowledge bases [1]. By grounding models in verifiable, up-to-date information, RAG improves the accuracy and relevance of generated content while reducing the likelihood of \"hallucinations\"\u2014instances where an AI generates incorrect or misleading information [1, 3, 4].\n\n## Why RAG is Used\nGeneral-purpose LLMs are trained on finite, static datasets, which leads to several limitations that RAG addresses:\n* **Knowledge Cutoffs:** Models are limited to the information available at the time of their training. RAG allows models to access real-time, current data [1, 2].\n* **Domain Specificity:** RAG enables models to utilize specialized, proprietary, or internal organizational data without the high costs and resource requirements of retraining or fine-tuning the model [1, 2].\n* **Accuracy and Trust:** By providing access to external sources, RAG allows users to cross-reference a model's answers with original content, increasing transparency and trust [3].\n* **Cost Efficiency:** RAG provides a way to scale AI applications and adapt them to new use cases without the computational expense of updating the model's internal parameters [1, 3].\n\n## How RAG Works\nThe RAG process functions as an \"open-book\" approach to answering questions, where the model retrieves relevant information before generating a response [3]. The process generally involves the following components and stages:\n\n### Key Components\n* **External Knowledge Source:** Stores domain-specific or general information, such as documents, databases, or APIs [2].\n* **Text Chunking and Preprocessing:** Large documents are broken into smaller, manageable pieces and cleaned for consistency [2].\n* **Embedding Model:** Converts text into numerical vectors that represent semantic meaning [2].\n* **Vector Database:** Stores these embeddings to enable fast similarity searches [2].\n* **Retriever:** Searches the database to find and return the most relevant information chunks based on the user's query [2].\n* **Generator (LLM):** Uses the retrieved knowledge and the original query to produce a grounded, accurate response [2].\n\n### The Process\n1. **Preparation:** External data is chunked, converted into embeddings, and stored in a vector database to create a knowledge library [2].\n2. **Querying:** When a user submits a query, a **Query Encoder** transforms it into a vector [2].\n3. **Retrieval:** The **Retriever** compares the query vector against the stored embeddings in the vector database to identify the most relevant information [2].\n4. **Augmentation:** The **Prompt Augmentation Layer** combines the retrieved information with the user's original query to provide necessary context [2].\n5. **Generation:** The LLM generates a response based on the provided context, ensuring the output is grounded in the retrieved facts [2].\n\n### Sources\n[1] https://www.ibm.com/think/topics/retrieval-augmented-generation  \n[2] https://www.geeksforgeeks.org/nlp/what-is-retrieval-augmented-generation-rag  \n[3] https://research.ibm.com/blog/retrieval-augmented-generation-RAG  \n[4] https://www.superannotate.com/blog/rag-explained  \n[5] https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "verified_report": null,
+      "claims": [],
+      "stats": {
+        "sources": 5,
+        "pages": 5,
+        "time": 28.665356397628784,
+        "citations": 19,
+        "mode": "SIMPLE"
+      },
+      "timeline": [
+        [
+          "19:51:48",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:48",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:49",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:49",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:49",
+          "Route selected: **SIMPLE**"
+        ],
+        [
+          "19:51:49",
+          "Rewriting search query..."
+        ],
+        [
+          "19:51:49",
+          "Rewriting search query..."
+        ],
+        [
+          "19:51:50",
+          "Rewriting search query..."
+        ],
+        [
+          "19:51:50",
+          "Search terms optimized successfully."
+        ],
+        [
+          "19:51:50",
+          "Querying Tavily Web Index..."
+        ],
+        [
+          "19:51:50",
+          "Retrieved 5 search sources."
+        ],
+        [
+          "19:51:50",
+          "Scraping and extracting full webpage contents..."
+        ],
+        [
+          "19:51:51",
+          "Extracted content from 5 target domains."
+        ],
+        [
+          "19:51:51",
+          "Formatting references for answer builder..."
+        ],
+        [
+          "19:51:51",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:51:51",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:52:04",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:52:04",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:52:16",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:52:16",
+          "Report synthesis complete."
+        ]
+      ],
+      "search_results": [
+        {
+          "title": "What is RAG (Retrieval Augmented Generation)? - IBM",
+          "url": "https://www.ibm.com/think/topics/retrieval-augmented-generation",
+          "content": "Retrieval augmented generation, or RAG, is an architecture for optimizing the performance of an [artificial intelligence (AI)](https://www.ibm.com/think/topics/artificial-intelligence) model by connecting it with external knowledge bases. RAG helps [large language models (LLMs)](https://www.ibm.com/think/topics/large-language-models) deliver more relevant responses at a higher quality. [Generative AI](https://www.ibm.com/think/topics/generative-ai) (gen AI) models are trained on large datasets and refer to this information to generate outputs. Enterprises can use RAG to complete gaps in a [machine learning](https://www.ibm.com/think/topics/machine-learning) model\u2019s knowledge base so it can provide better answers. Generative AI models such as OpenAI\u2019s [GPT](https://www.ibm.com/think/topics/gpt#:~:text=GPT%20models%20work%20by%20analyzing,based%20on%20all%20previous%20words.) work by detecting patterns in their data, then using those patterns to predict the most likely outcomes to user inputs. By combining generative AI with retrieval systems, RAG models can retrieve and integrate information from multiple data sources in response to complex queries. The [difference between RAG and fine-tuning](https://www.ibm.com/think/topics/rag-vs-fine-tuning) is that RAG lets an LLM query an external data source while fine-tuning trains an LLM on domain-specific data.",
+          "score": 0.9363841,
+          "raw_content": null
+        },
+        {
+          "title": "What is Retrieval-Augmented Generation (RAG) - GeeksforGeeks",
+          "url": "https://www.geeksforgeeks.org/nlp/what-is-retrieval-augmented-generation-rag",
+          "content": "# What is Retrieval-Augmented Generation (RAG). Retrieval-Augmented Generation (RAG) is a way to make AI answers more reliable by combining searching for relevant information and then generating a response. Instead of guessing based only on old training data, it first finds useful data from external sources (like documents or databases) and then uses it to give a better answer. * Can use user-specific data to give more relevant responses. If a user asks a question, instead of giving a general answer, a RAG-based system can:. This way, the response is more accurate, aligned with the platform\u2019s content and actually helpful for the user. The system first searches external sources for relevant information based on the user\u2019s query instead of relying only on existing training data. 1. ****Creating External Data:**** External data from APIs, databases or documents is chunked, converted into embeddings and stored in a vector database to build a knowledge library.",
+          "score": 0.9159971,
+          "raw_content": null
+        },
+        {
+          "title": "What is retrieval-augmented generation (RAG)? - IBM Research",
+          "url": "https://research.ibm.com/blog/retrieval-augmented-generation-RAG",
+          "content": "RAG is an AI framework for retrieving facts from an external knowledge base to ground large language models (LLMs) on the most accurate, up-to-date information and to give users insight into LLMs' generative process. Retrieval-augmented generation (RAG) is an AI framework for improving the quality of [LLM-generated](https://www.youtube.com/watch?v=hfIUstzHs9A) responses by grounding the model on external sources of knowledge to supplement the LLM\u2019s internal representation of information. Underpinning all [foundation models](https://research.ibm.com/blog/what-are-foundation-models), including LLMs, is an AI architecture known as the transformer. *   We are developing methods to [improve chatbots](https://research.ibm.com/blog/LLM-generated-data). *   We are co-creating an AI foundation model for [weather and climate prediction](https://research.ibm.com/blog/weather-climate-foundation-model). *   [AI](https://research.ibm.com/artificial-intelligence). *   [Generative AI](https://research.ibm.com/topics/generative-ai). *   [AI](https://research.ibm.com/artificial-intelligence). *   ### [Can LLMs discover quantum error correction codes?](https://research.ibm.com/blog/ai-for-qec). *   [AI](https://research.ibm.com/artificial-intelligence). *   [AI](https://research.ibm.com/artificial-intelligence). *   [Data and AI Security](https://research.ibm.com/topics/data-and-ai-security). *   [AI](https://research.ibm.com/artificial-intelligence). *   [Generative AI](https://research.ibm.com/topics/generative-ai). [![Image 10: close icon](https://consent.trustarc.com/get?name=ibm_close_icon.svg)](https://research.ibm.com/blog/retrieval-augmented-generation-RAG#). By visiting our website, you agree to our processing of information as described in IBM\u2019s[privacy statement](https://www.ibm.com/privacy).To provide a smooth navigation, your cookie preferences will be shared across the IBM web domains listed[here](https://research.ibm.com/blog/retrieval-augmented-generation-RAG#truste_domain_list).",
+          "score": 0.90791017,
+          "raw_content": null
+        },
+        {
+          "title": "What is RAG (Retrieval Augmented Generation) [+ Examples] | SuperAnnotate",
+          "url": "https://www.superannotate.com/blog/rag-explained",
+          "content": "# What is retrieval augmented generation (RAG) [examples included]. That's where retrieval-augmented generation (RAG) comes in. RAG builds on existing models like GPT by adding the ability to pull in information from external sources like databases and articles during the text generation process. This means the AI isn't just guessing; it's using real, reliable information to form its responses. In this article, we'll take a closer look at how RAG works, its applications, and how it could improve our interactions with AI systems, making them more useful and reliable. ## What is retrieval augmented generation (RAG)? Retrieval augmented generation (RAG) combines the advanced text-generation capabilities of GPT and other large language models with information retrieval functions to provide precise and contextually relevant information. This approach improves language models' ability to understand and process user queries by integrating the latest and most relevant data. The fundamental idea behind RAG is to bridge the gap between the vast knowledge in general-purpose language models and the need for precise, contextually accurate, and up-to-date information.",
+          "score": 0.89720124,
+          "raw_content": null
+        },
+        {
+          "title": "Retrieval-augmented generation",
+          "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+          "content": "*   [(Top)](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#). *   [3 Applications](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#Applications). *   [4.1 Encoder](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#Encoder). *   [4.3 Language model](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#Language_model). *   [4.4 Chunking](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#Chunking). *   [6 References](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#References). **Retrieval-augmented generation** (**RAG**) is a technique that enables [large language models](https://en.wikipedia.org/wiki/Large_language_model \"Large language model\") (LLMs) to retrieve and incorporate new information from external data sources.[[1]](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#cite_note-IBM-2023-1) With RAG, LLMs first refer to a specified set of documents, then respond to user queries. In healthcare, RAG has been studied as a way to ground large language model outputs in external medical knowledge sources, although reviews have noted continuing challenges around evaluation, ethics, and clinical reliability.[[7]](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#cite_note-7). The more reproducible version is called Retro++ and includes in-context RAG.[[16]](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#cite_note-wang2023a-16). One way to mitigate this is to do a traditional text search, add those results to the text chunks linked to the retrieved vectors from the vector search, and feed the combined hybrid text into the language model for generation.[[17]](https://en.wikipedia.org/wiki/Retrieval-augmented_generation#cite_note-17).",
+          "score": 0.87706697,
+          "raw_content": null
+        }
+      ],
+      "planner_tasks": [],
+      "workflow_steps": {
+        "router": "completed",
+        "query_rewrite_node": "completed",
+        "planner_node": "skipped",
+        "search_node": "completed",
+        "extract_node": "completed",
+        "formatter_node": "completed",
+        "answer_node": "completed",
+        "evidence_node": "skipped",
+        "synthesis_context": "skipped",
+        "gap_analysis_node": "skipped",
+        "simple": "completed"
+      }
+    },
+    {
+      "query": "what is n8n",
+      "mode": "SIMPLE",
+      "date": "Jul 02, 19:51",
+      "final_answer": "### What is n8n?\n\n**n8n** (a numeronym for \"Nodemation\") is an open-source workflow automation platform [2, 3]. It functions as a digital assistant that allows users to schedule tasks, sync data between different applications, and automate repetitive business, IT, or personal processes [1, 2]. \n\nBy connecting disparate systems that do not normally communicate with each other, n8n enables users to streamline operations without requiring advanced coding skills [1, 2]. It is designed to be flexible, allowing for both simple task automation and the creation of complex, multi-step systems [1, 3].\n\n### How Does n8n Work?\n\nn8n operates using a visual, node-based interface that allows users to build workflows without writing custom code [1, 3].\n\n*   **Nodes:** These are the building blocks of the platform. Each node represents a specific action, such as fetching data from an API, updating a spreadsheet, or sending an email [1, 3].\n*   **Workflows:** A workflow is a collection of nodes connected together to perform a set of actions based on a specific trigger [1, 3].\n*   **Visual Interface:** Users drag and connect these nodes within a visual editor to define the logic of the automation [1, 3].\n*   **Integrations:** The platform supports over 400 integrations out of the box, allowing it to connect with various tools like GitHub, AWS, OpenAI, Telegram, Typeform, and Slack [3].\n*   **Developer Flexibility:** While it is a no-code platform, it remains developer-friendly. Users can write custom JavaScript or Python code within workflows, import npm packages, or connect to any API that lacks a prebuilt node [3].\n*   **Self-Hosting:** Because n8n is open-source, users have the option to self-host the platform on their own servers. This provides increased control over data privacy, which is particularly beneficial for industries such as finance and healthcare where sensitive information must remain within a private environment [2, 3].\n\n### Sources\n\n[1] https://www.hostinger.com/tutorials/what-is-n8n  \n[2] https://www.scalahosting.com/blog/what-is-n8n-and-how-to-use-it  \n[3] https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n  \n[4] https://medium.com/data-and-beyond/part-1-introduction-to-n8n-what-it-is-and-how-it-works-74c214de769e",
+      "verified_report": null,
+      "claims": [],
+      "stats": {
+        "sources": 5,
+        "pages": 4,
+        "time": 17.81035828590393,
+        "citations": 6,
+        "mode": "SIMPLE"
+      },
+      "timeline": [
+        [
+          "19:51:23",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:23",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:24",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:25",
+          "Classifying query route..."
+        ],
+        [
+          "19:51:25",
+          "Route selected: **SIMPLE**"
+        ],
+        [
+          "19:51:25",
+          "Rewriting search query..."
+        ],
+        [
+          "19:51:25",
+          "Rewriting search query..."
+        ],
+        [
+          "19:51:26",
+          "Rewriting search query..."
+        ],
+        [
+          "19:51:26",
+          "Search terms optimized successfully."
+        ],
+        [
+          "19:51:26",
+          "Querying Tavily Web Index..."
+        ],
+        [
+          "19:51:28",
+          "Retrieved 5 search sources."
+        ],
+        [
+          "19:51:28",
+          "Scraping and extracting full webpage contents..."
+        ],
+        [
+          "19:51:30",
+          "Extracted content from 4 target domains."
+        ],
+        [
+          "19:51:30",
+          "Formatting references for answer builder..."
+        ],
+        [
+          "19:51:30",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:51:30",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:51:34",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:51:34",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:51:41",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:51:41",
+          "Report synthesis complete."
+        ]
+      ],
+      "search_results": [
+        {
+          "url": "https://www.hostinger.com/tutorials/what-is-n8n",
+          "title": "What is n8n? Understanding the workflow automation tool",
+          "content": "**n8n** is a workflow automation tool that lets you schedule tasks and move data between many of the apps, tools, platforms, and services your team uses every day. If you\u2019ve ever wished you could automate all the boring, repetitive business, IT, or even personal tasks that span multiple apps but that require no advanced skills, n8n might be exactly what you need. In this guide, we\u2019ll break down what n8n is, how it works, and why many people choose it over similar AI automation tools \u2013 in particular, you\u2019ll see how it compares to Zapier. Think of it as a digital assistant that handles repetitive work for you by scheduling tasks, leveraging n8n integrations to connect disparate systems, or automatically moving data between different apps that don\u2019t normally communicate with each other out of the box. It provides a visual interface with templates for common workflows so you can save time and focus on productivity without having to develop a custom automation tool.",
+          "score": 0.95176035,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.scalahosting.com/blog/what-is-n8n-and-how-to-use-it",
+          "title": "What is n8n and How to Use it? | ScalaHosting Blog",
+          "content": "An open-source platform called **n8n** promises to help with all this. It\u2019s designed to be a critical component in **automating routine business procedures, syncing data between apps, or creating custom workflows**. Unlike other automation tools and systems, **you can self-host n8n** and retain complete control over your data. You can adapt and integrate it into your work environment, and its open-source nature allows you to implement custom logic and solutions tailored to your specific requirements. n8n is a numeronym (an abbreviation that uses a number to represent omitted letters) for \u201c**Nodemation**.\u201d\u00a0 Nodemation, on the other hand, is a combination of the words **\u201cnode\u201d** and **\u201cautomation**.\u201d. Its developers describe it as \u201c*a workflow automation platform that uniquely combines AI capabilities with business process automation, giving technical teams the flexibility of code with the speed of no-code.*\u201c. Even if your particular service isn\u2019t listed as an integration, you can use a custom API to integrate it into your n8n workflow.",
+          "score": 0.8660535,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.reddit.com/r/automation/comments/1lv695o/can_someone_explain_n8n_to_me_like_im_mentally",
+          "title": "Can someone explain n8n to me like I'm mentally disabled - Reddit",
+          "content": "N8N is just a workflow automation tool, with \"ai agent\" capabilities included. N8N is also free if you self-host it. Economy-Brain-9077.",
+          "score": 0.8512743,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.freecodecamp.org/news/a-beginners-guide-to-automation-with-n8n",
+          "title": "A Beginner\u2019s Guide to Automation with n8n",
+          "content": "# A Beginner\u2019s Guide to Automation with n8n. Whether it\u2019s moving data between apps, triggering actions when something changes, or building smart systems that run on their own, automation can save hours every week. The problem is that most automation platforms make you choose between flexibility and simplicity. Writing your own scripts in Python or JavaScript gives you full control but takes more time to build and maintain. It is an open-source workflow automation platform that provides both control and simplicity. You can drag and connect nodes to create workflows or write code when needed. In this article, we\u2019ll learn how to build and deploy your own automation workflows using n8n. By the end, you\u2019ll have a working automation server and the knowledge to create smart, self-running workflows for any use case. This large library of ready-to-use nodes means you can connect most tools you use every day without needing to write any code at all.",
+          "score": 0.8479807,
+          "raw_content": null
+        },
+        {
+          "url": "https://medium.com/data-and-beyond/part-1-introduction-to-n8n-what-it-is-and-how-it-works-74c214de769e",
+          "title": "Part 1: Introduction to n8n \u2014 What It Is and How It Works",
+          "content": "## Data And Beyond. Writing guide: https://medium.com/data-and-beyond/how-to-write-for-data-and-beyond-b83ff0f3813e. Today, we\u2019re kicking off our journey into the world of automation with n8n \u2014 the one-stop workflow automation platform that\u2019s revolutionizing how we connect apps and simplify our daily tasks. If you\u2019ve ever felt overwhelmed by juggling multiple apps, manual data entry, and repetitive tasks, you\u2019re in the right place. > Before we proceed further, I\u2019d like to invite you on a deeper exploration into the world of generative AI with my book, **\u201cA Generative Journey to AI\u201d**. > This book is your ultimate guide to mastering the foundations and cutting-edge innovations in generative AI, offering insights and practical strategies to transform your understanding and work in the field. Thank you for your support, and let\u2019s dive in! ## Create an account to read\u00a0the\u00a0full\u00a0story. If you\u2019re new to Medium, create a new account to read this story on us. ## Published in Data And Beyond.",
+          "score": 0.8361405,
+          "raw_content": null
+        }
+      ],
+      "planner_tasks": [],
+      "workflow_steps": {
+        "router": "completed",
+        "query_rewrite_node": "completed",
+        "planner_node": "skipped",
+        "search_node": "completed",
+        "extract_node": "completed",
+        "formatter_node": "completed",
+        "answer_node": "completed",
+        "evidence_node": "skipped",
+        "synthesis_context": "skipped",
+        "gap_analysis_node": "skipped",
+        "simple": "completed"
+      }
+    }
+  ]
+}

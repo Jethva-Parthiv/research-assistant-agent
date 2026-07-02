@@ -1,0 +1,303 @@
+{
+  "query": "what is mcp",
+  "rewritten_query": "what is mcp",
+  "route_decision": "simple",
+  "final_answer": "# Model Context Protocol (MCP)\n\nThe Model Context Protocol (MCP) is an open-source standard designed to bridge AI models with external data sources, tools, and services [2, 4, 5]. It provides a universal, standardized way for AI applications to interact with external systems, effectively acting as a \"USB-C port for AI\" [2, 3, 5].\n\n### Core Purpose and Functionality\nMCP addresses the challenge of \"information silos\" where AI models are isolated from the data they need to provide relevant responses [4]. Instead of requiring developers to build and maintain custom, ad-hoc integrations for every API or database, MCP offers a single, consistent protocol [2, 3, 4].\n\n*   **Standardized Language:** Built on JSON-RPC 2.0, MCP allows AI assistants to invoke functions, retrieve data, and use predefined prompts in a structured, secure manner [2].\n*   **Universal Adapter:** It functions as a universal adapter, enabling AI applications to connect to various systems\u2014such as databases, content repositories, and business tools\u2014without needing custom code for each specific integration [2, 4, 5].\n*   **Two-Way Communication:** MCP supports persistent, real-time, two-way communication, allowing AI models to both retrieve information and trigger actions dynamically [3, 4].\n\n### Architecture\nMCP utilizes a client-server architecture to facilitate these connections [2, 4]:\n\n*   **MCP Hosts:** These are the AI-powered applications (e.g., IDE assistants, chatbots, or agents) that require access to external tools or data [2, 3].\n*   **MCP Clients:** These components run within the host application and maintain dedicated, one-to-one connections with MCP servers [2, 3].\n*   **MCP Servers:** These are lightweight programs that expose specific capabilities\u2014such as functions, data resources, or prompt templates\u2014to the client [2, 3, 5].\n\n### Benefits\n*   **Rapid Tool Integration:** Developers can plug in new capabilities without writing custom code from scratch. If an MCP server exists for a service (e.g., Google Drive, Slack, or a SQL database), any MCP-compatible AI application can connect to it immediately [2, 3, 4].\n*   **Dynamic Discovery:** AI models can dynamically discover and interact with available tools without requiring hard-coded knowledge of each specific integration [3].\n*   **Reduced Complexity:** By replacing fragmented, one-off integrations with a single protocol, MCP simplifies maintenance, authentication, and error handling [3, 4].\n\n### Use Cases\n*   **Customer Support:** AI assistants can pull customer history, check order statuses, and suggest resolutions by connecting to CRM and ticketing systems via MCP [3].\n*   **Finance:** AI-powered personal finance managers can aggregate transactions and track investments by connecting to multiple financial services through a unified MCP layer [3].\n*   **Software Development:** Coding assistants can analyze, refactor, and secure code by interacting with various development tools (e.g., static analysis, security scanning, and performance profiling) through a single MCP interface [3].\n\n### Sources\n[1] https://www.databricks.com/blog/what-is-model-context-protocol  \n[2] https://stytch.com/blog/model-context-protocol-introduction  \n[3] https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained  \n[4] https://www.anthropic.com/news/model-context-protocol  \n[5] https://modelcontextprotocol.io/docs/getting-started/intro",
+  "verified_report": null,
+  "claims": [],
+  "stats": {
+    "sources": 5,
+    "pages": 5,
+    "time": 32.259521484375,
+    "citations": 11,
+    "mode": "SIMPLE"
+  },
+  "timeline": [
+    [
+      "19:39:28",
+      "Classifying query route..."
+    ],
+    [
+      "19:39:28",
+      "Classifying query route..."
+    ],
+    [
+      "19:39:29",
+      "Classifying query route..."
+    ],
+    [
+      "19:39:29",
+      "Classifying query route..."
+    ],
+    [
+      "19:39:29",
+      "Route selected: **SIMPLE**"
+    ],
+    [
+      "19:39:29",
+      "Rewriting search query..."
+    ],
+    [
+      "19:39:29",
+      "Rewriting search query..."
+    ],
+    [
+      "19:39:30",
+      "Rewriting search query..."
+    ],
+    [
+      "19:39:30",
+      "Search terms optimized successfully."
+    ],
+    [
+      "19:39:30",
+      "Querying Tavily Web Index..."
+    ],
+    [
+      "19:39:31",
+      "Retrieved 5 search sources."
+    ],
+    [
+      "19:39:31",
+      "Scraping and extracting full webpage contents..."
+    ],
+    [
+      "19:39:32",
+      "Extracted content from 5 target domains."
+    ],
+    [
+      "19:39:32",
+      "Formatting references for answer builder..."
+    ],
+    [
+      "19:39:32",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:39:32",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:39:43",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:39:43",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:40:00",
+      "Synthesizing citations and compiling final report..."
+    ],
+    [
+      "19:40:00",
+      "Report synthesis complete."
+    ]
+  ],
+  "search_results": [
+    {
+      "url": "https://www.databricks.com/blog/what-is-model-context-protocol",
+      "title": "What is the Model Context Protocol (MCP)? | Databricks",
+      "content": "* The Model Context Protocol (MCP) is an open standard that lets AI assistants securely connect to tools, data sources and services through a consistent interface. The Model Context Protocol (MCP) is an open standard that enables AI applications to connect seamlessly with external data sources, tools, and systems. Think of the Model Context Protocol as a USB-C port for AI systems\u2014just as a USB-C port standardizes how devices connect to computers, MCP standardizes how AI agents access external resources like databases, APIs, file systems, and knowledge bases. The Model Context Protocol MCP serves as a standardized way for AI applications to discover and interact with external tools and data sources at runtime. The context protocol enables developers to build [AI agents](https://www.databricks.com/glossary/ai-agents) that can perform tasks using live data from popular enterprise systems, development environments, and other external sources\u2014all through a single, standardized protocol. Through its bidirectional communication between MCP clients and MCP servers, and support for agentic AI workflows, the Model Context Protocol MCP establishes the foundation for more capable, autonomous AI tools across diverse environments.",
+      "score": 0.94536424,
+      "raw_content": null
+    },
+    {
+      "url": "https://stytch.com/blog/model-context-protocol-introduction",
+      "title": "Model Context Protocol (MCP): A comprehensive introduction for ...",
+      "content": "**Model Context Protocol (MCP)** is an open standard that bridges AI models with external data and services, allowing Large Language Models (LLMs) to make structured API calls in a consistent, secure way. This post will introduce MCP, explain why it\u2019s valuable for connecting AI systems, compare it to existing approaches like ChatGPT plugins and manual API integrations, and dive into its recent support for OAuth-based authentication. MCP acts as a universal adapter between AI tools and external services, eliminating the need for custom integration code for each tool or API. MCP is essentially a **universal adapter** between AI applications and external tools or data sources. It defines a common protocol (built on JSON-RPC 2.0) that lets an AI assistant invoke functions, fetch data, or use predefined prompts from external services in a structured manner. The MCP layer enables AI applications to securely access and interact with external data sources and tools.",
+      "score": 0.9438932,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained",
+      "title": "Model Context Protocol (MCP) Clearly Explained : r/LLMDevs - Reddit",
+      "content": "# Model Context Protocol (MCP) Clearly Explained : r/LLMDevs. # Model Context Protocol (MCP) Clearly Explained. # What is MCP? The Model Context Protocol (MCP) is a standardized protocol that connects AI agents to various external tools and data sources. _**Imagine it as a USB-C port \u2014 but for AI applications.**_. ## Why use MCP instead of traditional APIs? Connecting an AI system to external tools involves integrating multiple APIs. Each API integration means separate code, documentation, authentication methods, error handling, and maintenance. *   **Single protocol:** MCP acts as a standardized \"connector,\" so integrating one MCP means potential access to multiple tools and services, not just one. ## When to use MCP? Probably, but, the point of what this person is talking about is \"well, it'll have access to everything, because you don't know what it needs ahead of time\" and that just, breaks API security, that's not how we do security.",
+      "score": 0.9242583,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/model-context-protocol",
+      "title": "Introducing the Model Context Protocol - Anthropic",
+      "content": "[Skip to main content](https://www.anthropic.com/news/model-context-protocol#main-content)[Skip to footer](https://www.anthropic.com/news/model-context-protocol#footer). *   [Policy](https://www.anthropic.com/policy). Today, we're open-sourcing the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. [Read more](https://www.anthropic.com/news/claude-sonnet-5). [Read more](https://www.anthropic.com/news/redeploying-fable-5). [Read more](https://www.anthropic.com/news/claude-science-ai-workbench). *   [Claude](https://claude.com/product/overview). *   [Claude Code](https://claude.com/product/claude-code). *   [Claude Cowork](https://claude.com/product/cowork). *   [@Claude](https://claude.com/product/tag). *   [Claude Design](https://claude.com/product/design). *   [Claude Security](https://claude.com/product/claude-security). *   [Skills](https://www.claude.com/skills). *   [Pricing](https://claude.com/pricing). *   [Mythos](https://www.anthropic.com/claude/mythos). *   [Fable](https://www.anthropic.com/claude/fable). *   [Opus](https://www.anthropic.com/claude/opus). *   [Sonnet](https://www.anthropic.com/claude/sonnet). *   [Haiku](https://www.anthropic.com/claude/haiku). *   [AI agents](https://claude.com/solutions/agents). *   [Code modernization](https://claude.com/solutions/code-modernization). *   [Coding](https://claude.com/solutions/coding). *   [Customer support](https://claude.com/solutions/customer-support). *   [Education](https://claude.com/solutions/education). *   [Enterprise](https://claude.com/solutions/enterprise). *   [Government](https://claude.com/solutions/government). *   [Healthcare](https://claude.com/solutions/healthcare). *   [Legal](https://claude.com/solutions/legal). *   [Nonprofits](https://claude.com/solutions/nonprofits). *   [Security](https://claude.com/solutions/security). *   [Overview](https://claude.com/platform/api). *   [Developer docs](https://platform.claude.com/docs). *   [Ecosystem](https://claude.com/ecosystem). *   [Marketplace](https://claude.com/platform/marketplace). *   [Google Cloud](https://claude.com/partners/google-cloud-vertex-ai). *   [Console login](https://platform.claude.com/). *   [Blog](https://claude.com/blog). *   [Community](https://claude.com/community). *   [Connectors](https://claude.com/connectors). *   [Customer stories](https://claude.com/customers). *   [Inside Claude Code](https://www.anthropic.com/product/claude-code). *   [Inside Claude Cowork](https://www.anthropic.com/product/claude-cowork). *   [Inside Claude Enterprise](https://www.anthropic.com/product/enterprise). *   [Plugins](https://claude.com/plugins). *   [Service partners](https://claude.com/partners/services). *   [Tutorials](https://claude.com/resources/tutorials). *   [Startups](https://claude.com/programs/startups). *   [Anthropic](https://www.anthropic.com/company). *   [Policy](https://www.anthropic.com/policy). *   [Claude\u2019s Constitution](https://www.anthropic.com/constitution). *   [Claude Corps](https://www.anthropic.com/claude-corps). *   [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential). *   [](https://www.youtube.com/@anthropic-ai).",
+      "score": 0.8539252,
+      "raw_content": null
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+      "title": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
+      "content": "[Skip to main content](https://modelcontextprotocol.io/docs/getting-started/intro#content-area). [Model Context Protocol home page![Image 1: light logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/light.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=a5ac61ce77858fb1ddaf6de761c39499)![Image 2: dark logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/dark.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=1227cb7feb8344f9f6288c6b5b0a6d80)](https://modelcontextprotocol.io/). *   [What is MCP?](https://modelcontextprotocol.io/docs/getting-started/intro). *   [Architecture](https://modelcontextprotocol.io/docs/learn/architecture). *   [Servers](https://modelcontextprotocol.io/docs/learn/server-concepts). *   [Clients](https://modelcontextprotocol.io/docs/learn/client-concepts). *   [Versioning](https://modelcontextprotocol.io/docs/learn/versioning). *   [Connect to local MCP servers](https://modelcontextprotocol.io/docs/develop/connect-local-servers). *   [Connect to remote MCP Servers](https://modelcontextprotocol.io/docs/develop/connect-remote-servers). *   [Build with Agent Skills](https://modelcontextprotocol.io/docs/develop/build-with-agent-skills). *   [Build an MCP server](https://modelcontextprotocol.io/docs/develop/build-server). *   [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector). *   [Debugging](https://modelcontextprotocol.io/docs/tools/debugging). *   [What can MCP enable?](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). *   [Why does MCP matter?](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). *   [Broad ecosystem support](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). *   [Start Building](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). *   [Learn more](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). AI assistants like [Claude](https://claude.com/docs/connectors/building) and [ChatGPT](https://developers.openai.com/api/docs/mcp/), development tools like [Visual Studio Code](https://code.visualstudio.com/docs/copilot/chat/mcp-servers), [Cursor](https://cursor.com/docs/context/mcp), [MCPJam](https://docs.mcpjam.com/getting-started), and many others all support MCP \u2014 making it easy to build once and integrate everywhere. ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). ## [Build servers Create MCP servers to expose your data and tools](https://modelcontextprotocol.io/docs/develop/build-server). ## [Build clients Develop applications that connect to MCP servers](https://modelcontextprotocol.io/docs/develop/build-client). ## [Build MCP Apps Build interactive apps that run inside AI clients](https://modelcontextprotocol.io/extensions/apps/overview). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [Understand concepts Learn the core concepts and architecture of MCP](https://modelcontextprotocol.io/docs/learn/architecture). [Architecture](https://modelcontextprotocol.io/docs/learn/architecture).",
+      "score": 0.82994765,
+      "raw_content": null
+    }
+  ],
+  "planner_tasks": [
+    "Define the core architecture and primary use cases of the Model Context Protocol (MCP).",
+    "Identify and categorize existing Agent-to-Agent (A2A) communication protocols and frameworks.",
+    "Compare the technical design, scope, and interoperability goals of MCP versus A2A protocols.",
+    "Analyze the specific scenarios where MCP and A2A protocols overlap or serve complementary functions."
+  ],
+  "workflow_steps": {
+    "router": "completed",
+    "query_rewrite_node": "completed",
+    "planner_node": "skipped",
+    "search_node": "completed",
+    "extract_node": "completed",
+    "formatter_node": "completed",
+    "answer_node": "completed",
+    "evidence_node": "skipped",
+    "synthesis_context": "skipped",
+    "gap_analysis_node": "skipped",
+    "simple": "completed"
+  },
+  "history": [
+    {
+      "query": "what is mcp",
+      "mode": "SIMPLE",
+      "date": "Jul 02, 19:40",
+      "final_answer": "# Model Context Protocol (MCP)\n\nThe Model Context Protocol (MCP) is an open-source standard designed to bridge AI models with external data sources, tools, and services [2, 4, 5]. It provides a universal, standardized way for AI applications to interact with external systems, effectively acting as a \"USB-C port for AI\" [2, 3, 5].\n\n### Core Purpose and Functionality\nMCP addresses the challenge of \"information silos\" where AI models are isolated from the data they need to provide relevant responses [4]. Instead of requiring developers to build and maintain custom, ad-hoc integrations for every API or database, MCP offers a single, consistent protocol [2, 3, 4].\n\n*   **Standardized Language:** Built on JSON-RPC 2.0, MCP allows AI assistants to invoke functions, retrieve data, and use predefined prompts in a structured, secure manner [2].\n*   **Universal Adapter:** It functions as a universal adapter, enabling AI applications to connect to various systems\u2014such as databases, content repositories, and business tools\u2014without needing custom code for each specific integration [2, 4, 5].\n*   **Two-Way Communication:** MCP supports persistent, real-time, two-way communication, allowing AI models to both retrieve information and trigger actions dynamically [3, 4].\n\n### Architecture\nMCP utilizes a client-server architecture to facilitate these connections [2, 4]:\n\n*   **MCP Hosts:** These are the AI-powered applications (e.g., IDE assistants, chatbots, or agents) that require access to external tools or data [2, 3].\n*   **MCP Clients:** These components run within the host application and maintain dedicated, one-to-one connections with MCP servers [2, 3].\n*   **MCP Servers:** These are lightweight programs that expose specific capabilities\u2014such as functions, data resources, or prompt templates\u2014to the client [2, 3, 5].\n\n### Benefits\n*   **Rapid Tool Integration:** Developers can plug in new capabilities without writing custom code from scratch. If an MCP server exists for a service (e.g., Google Drive, Slack, or a SQL database), any MCP-compatible AI application can connect to it immediately [2, 3, 4].\n*   **Dynamic Discovery:** AI models can dynamically discover and interact with available tools without requiring hard-coded knowledge of each specific integration [3].\n*   **Reduced Complexity:** By replacing fragmented, one-off integrations with a single protocol, MCP simplifies maintenance, authentication, and error handling [3, 4].\n\n### Use Cases\n*   **Customer Support:** AI assistants can pull customer history, check order statuses, and suggest resolutions by connecting to CRM and ticketing systems via MCP [3].\n*   **Finance:** AI-powered personal finance managers can aggregate transactions and track investments by connecting to multiple financial services through a unified MCP layer [3].\n*   **Software Development:** Coding assistants can analyze, refactor, and secure code by interacting with various development tools (e.g., static analysis, security scanning, and performance profiling) through a single MCP interface [3].\n\n### Sources\n[1] https://www.databricks.com/blog/what-is-model-context-protocol  \n[2] https://stytch.com/blog/model-context-protocol-introduction  \n[3] https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained  \n[4] https://www.anthropic.com/news/model-context-protocol  \n[5] https://modelcontextprotocol.io/docs/getting-started/intro",
+      "verified_report": null,
+      "claims": [],
+      "stats": {
+        "sources": 5,
+        "pages": 5,
+        "time": 32.259521484375,
+        "citations": 11,
+        "mode": "SIMPLE"
+      },
+      "timeline": [
+        [
+          "19:39:28",
+          "Classifying query route..."
+        ],
+        [
+          "19:39:28",
+          "Classifying query route..."
+        ],
+        [
+          "19:39:29",
+          "Classifying query route..."
+        ],
+        [
+          "19:39:29",
+          "Classifying query route..."
+        ],
+        [
+          "19:39:29",
+          "Route selected: **SIMPLE**"
+        ],
+        [
+          "19:39:29",
+          "Rewriting search query..."
+        ],
+        [
+          "19:39:29",
+          "Rewriting search query..."
+        ],
+        [
+          "19:39:30",
+          "Rewriting search query..."
+        ],
+        [
+          "19:39:30",
+          "Search terms optimized successfully."
+        ],
+        [
+          "19:39:30",
+          "Querying Tavily Web Index..."
+        ],
+        [
+          "19:39:31",
+          "Retrieved 5 search sources."
+        ],
+        [
+          "19:39:31",
+          "Scraping and extracting full webpage contents..."
+        ],
+        [
+          "19:39:32",
+          "Extracted content from 5 target domains."
+        ],
+        [
+          "19:39:32",
+          "Formatting references for answer builder..."
+        ],
+        [
+          "19:39:32",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:39:32",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:39:43",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:39:43",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:40:00",
+          "Synthesizing citations and compiling final report..."
+        ],
+        [
+          "19:40:00",
+          "Report synthesis complete."
+        ]
+      ],
+      "search_results": [
+        {
+          "url": "https://www.databricks.com/blog/what-is-model-context-protocol",
+          "title": "What is the Model Context Protocol (MCP)? | Databricks",
+          "content": "* The Model Context Protocol (MCP) is an open standard that lets AI assistants securely connect to tools, data sources and services through a consistent interface. The Model Context Protocol (MCP) is an open standard that enables AI applications to connect seamlessly with external data sources, tools, and systems. Think of the Model Context Protocol as a USB-C port for AI systems\u2014just as a USB-C port standardizes how devices connect to computers, MCP standardizes how AI agents access external resources like databases, APIs, file systems, and knowledge bases. The Model Context Protocol MCP serves as a standardized way for AI applications to discover and interact with external tools and data sources at runtime. The context protocol enables developers to build [AI agents](https://www.databricks.com/glossary/ai-agents) that can perform tasks using live data from popular enterprise systems, development environments, and other external sources\u2014all through a single, standardized protocol. Through its bidirectional communication between MCP clients and MCP servers, and support for agentic AI workflows, the Model Context Protocol MCP establishes the foundation for more capable, autonomous AI tools across diverse environments.",
+          "score": 0.94536424,
+          "raw_content": null
+        },
+        {
+          "url": "https://stytch.com/blog/model-context-protocol-introduction",
+          "title": "Model Context Protocol (MCP): A comprehensive introduction for ...",
+          "content": "**Model Context Protocol (MCP)** is an open standard that bridges AI models with external data and services, allowing Large Language Models (LLMs) to make structured API calls in a consistent, secure way. This post will introduce MCP, explain why it\u2019s valuable for connecting AI systems, compare it to existing approaches like ChatGPT plugins and manual API integrations, and dive into its recent support for OAuth-based authentication. MCP acts as a universal adapter between AI tools and external services, eliminating the need for custom integration code for each tool or API. MCP is essentially a **universal adapter** between AI applications and external tools or data sources. It defines a common protocol (built on JSON-RPC 2.0) that lets an AI assistant invoke functions, fetch data, or use predefined prompts from external services in a structured manner. The MCP layer enables AI applications to securely access and interact with external data sources and tools.",
+          "score": 0.9438932,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1jbqegg/model_context_protocol_mcp_clearly_explained",
+          "title": "Model Context Protocol (MCP) Clearly Explained : r/LLMDevs - Reddit",
+          "content": "# Model Context Protocol (MCP) Clearly Explained : r/LLMDevs. # Model Context Protocol (MCP) Clearly Explained. # What is MCP? The Model Context Protocol (MCP) is a standardized protocol that connects AI agents to various external tools and data sources. _**Imagine it as a USB-C port \u2014 but for AI applications.**_. ## Why use MCP instead of traditional APIs? Connecting an AI system to external tools involves integrating multiple APIs. Each API integration means separate code, documentation, authentication methods, error handling, and maintenance. *   **Single protocol:** MCP acts as a standardized \"connector,\" so integrating one MCP means potential access to multiple tools and services, not just one. ## When to use MCP? Probably, but, the point of what this person is talking about is \"well, it'll have access to everything, because you don't know what it needs ahead of time\" and that just, breaks API security, that's not how we do security.",
+          "score": 0.9242583,
+          "raw_content": null
+        },
+        {
+          "url": "https://www.anthropic.com/news/model-context-protocol",
+          "title": "Introducing the Model Context Protocol - Anthropic",
+          "content": "[Skip to main content](https://www.anthropic.com/news/model-context-protocol#main-content)[Skip to footer](https://www.anthropic.com/news/model-context-protocol#footer). *   [Policy](https://www.anthropic.com/policy). Today, we're open-sourcing the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. [Read more](https://www.anthropic.com/news/claude-sonnet-5). [Read more](https://www.anthropic.com/news/redeploying-fable-5). [Read more](https://www.anthropic.com/news/claude-science-ai-workbench). *   [Claude](https://claude.com/product/overview). *   [Claude Code](https://claude.com/product/claude-code). *   [Claude Cowork](https://claude.com/product/cowork). *   [@Claude](https://claude.com/product/tag). *   [Claude Design](https://claude.com/product/design). *   [Claude Security](https://claude.com/product/claude-security). *   [Skills](https://www.claude.com/skills). *   [Pricing](https://claude.com/pricing). *   [Mythos](https://www.anthropic.com/claude/mythos). *   [Fable](https://www.anthropic.com/claude/fable). *   [Opus](https://www.anthropic.com/claude/opus). *   [Sonnet](https://www.anthropic.com/claude/sonnet). *   [Haiku](https://www.anthropic.com/claude/haiku). *   [AI agents](https://claude.com/solutions/agents). *   [Code modernization](https://claude.com/solutions/code-modernization). *   [Coding](https://claude.com/solutions/coding). *   [Customer support](https://claude.com/solutions/customer-support). *   [Education](https://claude.com/solutions/education). *   [Enterprise](https://claude.com/solutions/enterprise). *   [Government](https://claude.com/solutions/government). *   [Healthcare](https://claude.com/solutions/healthcare). *   [Legal](https://claude.com/solutions/legal). *   [Nonprofits](https://claude.com/solutions/nonprofits). *   [Security](https://claude.com/solutions/security). *   [Overview](https://claude.com/platform/api). *   [Developer docs](https://platform.claude.com/docs). *   [Ecosystem](https://claude.com/ecosystem). *   [Marketplace](https://claude.com/platform/marketplace). *   [Google Cloud](https://claude.com/partners/google-cloud-vertex-ai). *   [Console login](https://platform.claude.com/). *   [Blog](https://claude.com/blog). *   [Community](https://claude.com/community). *   [Connectors](https://claude.com/connectors). *   [Customer stories](https://claude.com/customers). *   [Inside Claude Code](https://www.anthropic.com/product/claude-code). *   [Inside Claude Cowork](https://www.anthropic.com/product/claude-cowork). *   [Inside Claude Enterprise](https://www.anthropic.com/product/enterprise). *   [Plugins](https://claude.com/plugins). *   [Service partners](https://claude.com/partners/services). *   [Tutorials](https://claude.com/resources/tutorials). *   [Startups](https://claude.com/programs/startups). *   [Anthropic](https://www.anthropic.com/company). *   [Policy](https://www.anthropic.com/policy). *   [Claude\u2019s Constitution](https://www.anthropic.com/constitution). *   [Claude Corps](https://www.anthropic.com/claude-corps). *   [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential). *   [](https://www.youtube.com/@anthropic-ai).",
+          "score": 0.8539252,
+          "raw_content": null
+        },
+        {
+          "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+          "title": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
+          "content": "[Skip to main content](https://modelcontextprotocol.io/docs/getting-started/intro#content-area). [Model Context Protocol home page![Image 1: light logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/light.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=a5ac61ce77858fb1ddaf6de761c39499)![Image 2: dark logo](https://mintcdn.com/mcp/2BMHnlNW5OqOohXZ/logo/dark.svg?fit=max&auto=format&n=2BMHnlNW5OqOohXZ&q=85&s=1227cb7feb8344f9f6288c6b5b0a6d80)](https://modelcontextprotocol.io/). *   [What is MCP?](https://modelcontextprotocol.io/docs/getting-started/intro). *   [Architecture](https://modelcontextprotocol.io/docs/learn/architecture). *   [Servers](https://modelcontextprotocol.io/docs/learn/server-concepts). *   [Clients](https://modelcontextprotocol.io/docs/learn/client-concepts). *   [Versioning](https://modelcontextprotocol.io/docs/learn/versioning). *   [Connect to local MCP servers](https://modelcontextprotocol.io/docs/develop/connect-local-servers). *   [Connect to remote MCP Servers](https://modelcontextprotocol.io/docs/develop/connect-remote-servers). *   [Build with Agent Skills](https://modelcontextprotocol.io/docs/develop/build-with-agent-skills). *   [Build an MCP server](https://modelcontextprotocol.io/docs/develop/build-server). *   [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector). *   [Debugging](https://modelcontextprotocol.io/docs/tools/debugging). *   [What can MCP enable?](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). *   [Why does MCP matter?](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). *   [Broad ecosystem support](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). *   [Start Building](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). *   [Learn more](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#what-can-mcp-enable). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#why-does-mcp-matter). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#broad-ecosystem-support). AI assistants like [Claude](https://claude.com/docs/connectors/building) and [ChatGPT](https://developers.openai.com/api/docs/mcp/), development tools like [Visual Studio Code](https://code.visualstudio.com/docs/copilot/chat/mcp-servers), [Cursor](https://cursor.com/docs/context/mcp), [MCPJam](https://docs.mcpjam.com/getting-started), and many others all support MCP \u2014 making it easy to build once and integrate everywhere. ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#start-building). ## [Build servers Create MCP servers to expose your data and tools](https://modelcontextprotocol.io/docs/develop/build-server). ## [Build clients Develop applications that connect to MCP servers](https://modelcontextprotocol.io/docs/develop/build-client). ## [Build MCP Apps Build interactive apps that run inside AI clients](https://modelcontextprotocol.io/extensions/apps/overview). ## [\u200b](https://modelcontextprotocol.io/docs/getting-started/intro#learn-more). ## [Understand concepts Learn the core concepts and architecture of MCP](https://modelcontextprotocol.io/docs/learn/architecture). [Architecture](https://modelcontextprotocol.io/docs/learn/architecture).",
+          "score": 0.82994765,
+          "raw_content": null
+        }
+      ],
+      "planner_tasks": [],
+      "workflow_steps": {
+        "router": "completed",
+        "query_rewrite_node": "completed",
+        "planner_node": "skipped",
+        "search_node": "completed",
+        "extract_node": "completed",
+        "formatter_node": "completed",
+        "answer_node": "completed",
+        "evidence_node": "skipped",
+        "synthesis_context": "skipped",
+        "gap_analysis_node": "skipped",
+        "simple": "completed"
+      }
+    }
+  ]
+}
